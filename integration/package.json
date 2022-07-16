@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "parcel": "^2.6.2",
+    "@parcel/transformer-sass": "^2.5.0"
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1",
+    "reset.css": "^2.0.2",
+    "sass": "^1.53.0"
+  }
+}
