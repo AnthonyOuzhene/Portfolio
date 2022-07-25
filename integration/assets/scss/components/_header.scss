@@ -1,3 +1,102 @@
 .header {
+  background-image: url(https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  text-align: center;
+
+  .resume-header {
     display: flex;
+  }
+
+  .navigation {
+    width: 100%;
+    height: 100%,
+  }
+
+  .menuContent {
+    display: flex;
+  }
+
+  .welcome {
+    display: flex;
+    box-sizing: border-box;
+    background-color: rgb(245, 244, 244);
+    width: 15%;
+  }
+
+  #hello {
+    color: black;
+    font-weight: bold;
+    font-style: oblique;
+    border: none;
+  }
+
+  .menu_item {
+    width: 100%;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    height: 4em;
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(15, 15, 73);
+    text-shadow: white 4px 4px 4px;
+    font-size: 20px;
+
+  }
+
+  a:hover {
+    background: #272727 none repeat scroll 0 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s ease 0s;
+    background-color: #ff3740;
+  }
+
+  .myself {
+    color: black;
+    text-shadow: white 2px 2px 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    line-height: 3em;
+    box-sizing: border-box;
+    box-shadow: 8px 4px 4px rgb(15, 15, 73);;
+    background-color: rgba(71, 42, 177, 0.288);
+    margin-top: 50px;
+    margin: 10em 15em 15em;
+  }
+
+  .name {
+    font-size: 55px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .job {
+    font-size: 30px;
+  }
+
+  .intro {
+    font-size: 16px;
+    text-transform: lowercase;
+    font-style: italic;
+    margin-top: 2em;
+  }
+
+
+  .header_bg_img {
+    height: 100%;
+  }
+
+
 }
