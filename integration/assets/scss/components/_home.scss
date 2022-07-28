@@ -1,0 +1,60 @@
+main {
+    display: flex;
+    margin: 5em 8em 5em 8em;
+
+
+    & .profile_pic {
+        width: 25%;
+        margin: 2em;
+        border: solid black 1px;
+        border-radius: 50%;
+        width: 80%;
+    }
+
+    .description {
+        padding-left: 5em;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infos {
+        display: grid;
+        grid-template-columns: 60% 60%;
+        grid-template-rows: 80% 80%;
+        font-size: 19px;
+    }
+
+    span {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: rgba(119, 116, 116, 0.664);
+        text-shadow: #312044 1px 1px 1px;
+    }
+
+    p {
+        margin-top: 4em;
+        color: $textColor;
+
+    }
+
+    .cv {
+        margin-top: 4em;
+    }
+
+
+    h1 {
+        text-transform: uppercase;
+        color: $textColor;
+    }
+
+    ul {
+        display: table;
+        border-top: solid #312044 1px;
+        padding: 2em;
+        margin-top: 1em;
+    }
+
+
+}

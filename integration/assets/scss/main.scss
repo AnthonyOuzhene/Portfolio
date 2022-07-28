@@ -4,9 +4,11 @@
 // import des fonts
 @import './fonts';
 
-// import du style global
-@import './global';
+// imports des layouts
+@import './layout/header';
+@import './layout/global';
+@import './layout/footer';
 
 // imports des composants
-@import './components/header';
-@import './components/footer';
+@import './components/home';
+

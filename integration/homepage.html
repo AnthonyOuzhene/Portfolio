@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
     <title>Portfolio Ouzhene Anthony</title>
 </head>
 
@@ -82,29 +84,61 @@
 
     <main>
 
-        <img class="profilePicture" src="assets/images/profile.png">
+        <img class="profile_pic" src="assets/images/profile.png">
 
-        <h1>Qui suis-je ?</h1>
+        <div class="description">
 
-        <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam rem quas delectus voluptatem ipsa autem ea
-            quaerat saepe iure atque voluptas, labore adipisci consequuntur repudiandae unde officiis quod commodi
-            ipsam.
-        </p>
+            <h1>Qui suis-je ?</h1>
 
-        <button class="cv" type="submit">Télécharger le CV</button>
+            <ul class="infos">
+                <li><span>nom</span> : Ouzhene Anthony</li>
+                <li><span>job</span> : Développeur web</li>
+                <li><span>âge</span> : 37 ans</li>
+                <li><span>ville</span> : Gerville</li>
+
+            </ul>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam rem quas delectus voluptatem ipsa autem ea
+                quaerat saepe iure atque voluptas, labore adipisci consequuntur repudiandae unde officiis quod commodi
+                ipsam.
+            </p>
+
+
+            <div>
+                <a href="https://www.facebook.com/">
+                    <button class="cv" type=button>
+                        <i class="fa-solid fa-download"></i>
+                        Télécharger CV</button>
+                </a>
+            </div>
     </main>
 
     <footer>
 
-        <h1>Gardons le contact</h1>
+        <div class="thanks">
+            <img src="./assets/images/thanks2.png">
+        </div>
 
-        <ul class="social_media">
-            <li><a href="">GitHub</a></li>
-            <li><a href="">LinkedIn</a></li>
-            <li><a href="">Twitter</a></li>
-            <li><a href="">Mail</a></li>
-        </ul>
+        <div class="grid">
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Compétences</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h1>Restons en contact</h1>
+
+            <ul class="social_media">
+                <li><a href=""><i class="fa-brands fa-github"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+        </div>
     </footer>
     <script src="./main.js" type="module"></script>
 </body>
