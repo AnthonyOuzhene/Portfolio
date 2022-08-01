@@ -4,7 +4,7 @@ main {
 
 
     & .profile_pic {
-        width: 25%;
+        //width: 100%;
         margin: 2em;
         border: solid black 1px;
         border-radius: 50%;
@@ -34,8 +34,9 @@ main {
     }
 
     p {
-        margin-top: 4em;
+        margin-top: 1em;
         color: $textColor;
+        font-size: 16px;
 
     }
 
@@ -56,5 +57,12 @@ main {
         margin-top: 1em;
     }
 
+    .anthony {
+        display:flex;
+        flex-direction: column;
+        margin-left: 2em;
+        width: 100%;
+        font-style: italic;
+    }
 
 }
