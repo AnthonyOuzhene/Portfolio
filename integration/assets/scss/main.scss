@@ -1,8 +1,9 @@
 // import des variables
-@import './colors';
-
+@import './abstract/colors';
 // import des fonts
-@import './fonts';
+@import './abstract/fonts';
+@import './abstract/mixins';
+
 
 // imports des layouts
 @import './layout/header';
@@ -11,4 +12,6 @@
 
 // imports des composants
 @import './components/home';
+@import './components/nav';
+
 

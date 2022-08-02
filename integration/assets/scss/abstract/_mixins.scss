@@ -1,0 +1,34 @@
+// une mixin permet de réutiliser n'importe où dans notre sass un règle, en faisant varier certaines valeurs ou le contenu par défaut des règles
+
+/* Cette première mixin est un peu spéciale : on la prévoit pour les règles à faire exclusivement sur mobile, mais ces règles ne seront pas utilisée par les breakpoints supérieurs => c'est pour ça qu'on utilise max-width */
+@mixin small-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+// on doit un nom à la mixin, ici "medium"
+@mixin medium {
+    @media screen and (min-width: 600px) {
+        // content va reprendre le contenu des accolades qu'on l'on pose avec le @include
+        @content;
+    }
+}
+
+@mixin large {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin extra-large {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin huge {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
