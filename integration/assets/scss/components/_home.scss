@@ -1,14 +1,17 @@
 .home {
-    display: flex;
     margin: 5em 8em 5em 8em;
 
-
     & .profile_pic {
-        //width: 100%;
-        margin: 2em;
+        float: left;
+        width: 30%;
+        margin-top: 5em;
         border: solid black 1px;
         border-radius: 50%;
-        width: 80%;
+
+        @include small-only {
+        float: none;
+        }
+    
     }
 
     .description {
@@ -37,7 +40,7 @@
         margin-top: 1em;
         color: $textColor;
         font-size: 16px;
-
+        padding-top: 1em;
     }
 
     .cv {
@@ -46,16 +49,16 @@
     }
 
 
-    h1 {
-        text-transform: uppercase;
-        color: $textColor;
-    }
 
     ul {
         display: table;
         border-top: solid #312044 1px;
         padding: 2em;
         margin-top: 1em;
+    }
+
+    li {
+        
     }
 
     .anthony {

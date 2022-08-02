@@ -11,6 +11,10 @@ h1 {
     justify-content: space-evenly;
     padding-top: 2em;
     font-size: 20px;
+
+    @include small-only {
+        display: inline-block;
+            }
 }
 
 .left-skills{
@@ -44,6 +48,7 @@ li {
     font-family: "Raleway Regular";
     color: white;
     background: $button;
+    text-shadow: 0px 1px 16px #031421;
     font-size: 16px;
     border: none;
     border-radius: 20px;
@@ -58,16 +63,22 @@ li {
 
 .soft, .compItems {
     display: grid;
-    grid-template-columns: 30% 30% 30% 30%;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include small-only {
+    grid-template-columns: 1fr 1fr;
+        }
+
 
 }
 
 .item_bis{
     font-size: 18px;
+    line-height: 2.5em;
 }
 
 .language {
-    margin-top: 6.4em;
+    margin-top: 8em;
 }
 
 }
