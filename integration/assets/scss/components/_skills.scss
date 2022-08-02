@@ -1,0 +1,73 @@
+.my_skills {
+   box-shadow: 0 1px 16px 2px #f5f5f5;
+
+h1 {
+    text-align: center;
+    padding-top: 2em;
+}
+
+.skills {
+    display:flex;
+    justify-content: space-evenly;
+    padding-top: 2em;
+    font-size: 20px;
+}
+
+.left-skills{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+}
+
+.right-skills{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+
+}
+
+h2 {
+    padding-bottom: 0.5em;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    font-weight: bold;
+    border-bottom: solid 1px #031421;
+}
+
+li {
+    line-height: 1.7em;
+}
+
+.item {
+    font-family: "Raleway Regular";
+    color: white;
+    background: $button;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    padding: 0.6em;
+    margin: 1em;
+    box-shadow: 0 1px 16px #031421;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+.soft, .compItems {
+    display: grid;
+    grid-template-columns: 30% 30% 30% 30%;
+
+}
+
+.item_bis{
+    font-size: 18px;
+}
+
+.language {
+    margin-top: 6.4em;
+}
+
+}

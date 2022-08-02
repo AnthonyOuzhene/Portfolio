@@ -1,34 +1,185 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <title>Portfolio Ouzhene Anthony</title>
 </head>
 
-<header>
-    <img class= "logo" src="https://www.hicom.fr/wp-content/uploads/2017/09/Logo_TV_2015.png" alt="logo">
+<body>
+    <header class="header">
+        <div class="resume-header">
+            <div class="welcome">
+                <marquee>
+                    <a href="#" id="hello">Bonjour ! Bienvenue sur mon portfolio ! </a>
+                </marquee>
+            </div>
 
-    <nav class="menu">
-        <ul class="menuContent">
-            <li class="menu_item">Profil</li>
-            <li class="menu_item">Compétences</li>
-            <li class="menu_item">Portfolio</li>
-            <li class="menu_item">Travaux SEO</li>
-            <li class="menu_item">Blog</li>
-            <li class="menu_item">Contact</li>
-        </ul>
-    </nav>
+            <nav class="navigation">
 
-    <img class="profile" style="background-image: url('https://ikasougou.com/samglobalservices/wp-content/uploads/sites/2/2018/07/otricom-developpement-application-mobile-web-1024x576.jpg');" alt="profile">
+                <input type="checkbox" class="toggler" />
+                <div class="hamburger">
+                    <div></div>
+                </div>
 
-</header>
+                <ul class="menuContent">
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/2949992/pexels-photo-2949992.jpeg?auto=compress&cs=tinysrgb&w=1600)">Profil</a>
+                    </li>
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">Compétences</a>
+                    </li>
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/5827881/pexels-photo-5827881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">Portfolio</a>
+                    </li>
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/12813050/pexels-photo-12813050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">SEO</a>
+                    </li>
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/5052875/pexels-photo-5052875.jpeg?auto=compress&cs=tinysrgb&w=1600)">Blog</a>
+                    </li>
+                    <li class="menu_item active">
+                        <a class="nav" href=""
+                            style="background-image: url(https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=1600)">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
-<main></main>
+        <div class="presentation">
 
-<footer></footer>
+
+            <div class="myself">
+                <img class="header_bg_img">
+                <h1 class="name">Ouzhene Anthony</h1>
+
+                <h2 class="job">Développeur web Full-stack / Back-end</h2>
+
+                <div class="intro">
+                    Créations
+                    <div id="flip">
+                        <div>
+                            <div>modernes</div>
+                        </div>
+                        <div>
+                            <div>responsives</div>
+                        </div>
+                        <div>
+                            <div>UX friendly</div>
+                        </div>
+                    </div>
+                    pour le web
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="my_skills">
+            <h1>Mes compétences</h1>
+
+            <section class="skills">
+                <div class="left-skills">
+                    <h2><i class="fa-solid fa-gears"></i>
+                        Compétences techniques</h2>
+                    <ul class="compItems">
+                        <li class="item">HTML</li>
+                        <li class="item">CSS</li>
+                        <li class="item">SASS</li>
+                        <li class="item">JavaScript</li>
+                        <li class="item">Bootstrap</li>
+                        <li class="item">PHP</li>
+                        <li class="item">MySQL</li>
+                        <li class="item">Symfony</li>
+                        <li class="item">WordPress</li>
+                        <li class="item">Vue.js</li>
+                        <li class="item">REST API</li>
+                    </ul>
+                    
+                    <h2>
+                        <i class="fa-solid fa-user-tie"></i>
+                        Savoir-être
+                    </h2>
+                    <ul class="soft">
+                        <li class="item">Rigoureux</li>
+                        <li class="item">Autonome</li>
+                        <li class="item">Organisé</li>
+                        <li class="item">Travail d'équipe</li>
+                        <li class="item">Motivé</li>
+                        <li class="item">Communication</li>
+
+
+                    </ul>
+
+                </div>
+                <div class="right-skills">
+                    <h2>
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                        Outils
+                    </h2>
+                    <ul class="tool_list">
+                        <li class="item_bis"><span>Versionning</span> : Git, Github, Windows, Linux</li>
+                        <li class="item_bis"><span>Bureautique</span> : MS Office</li>
+                    </ul>
+
+
+                    <h2 class="language">
+                        <i class="fa-solid fa-earth-americas"></i>
+                        Langues
+                    </h2>
+
+                    <ul>
+                        <li class="item_bis"><span>Anglais</span> : Courant</li>
+                        <li class="item_bis"><span>Espagnol</span> : Notions</li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <div class="thanks">
+            <img src="./assets/images/thanks2.png">
+        </div>
+
+        <div class="grid">
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Compétences</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h1>Restons en contact</h1>
+
+            <ul class="social_media">
+                <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./main.js" type="module"></script>
+</body>
 
 </html>
