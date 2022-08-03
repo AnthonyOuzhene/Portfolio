@@ -10,6 +10,7 @@ html, body
   line-height: 1.4;
   color: $textColor;
   background: $mainBackgroundColor;
+  
 
   @include small-only {
     width: fit-content;
@@ -53,6 +54,24 @@ h2 {
 span {
   text-transform: uppercase;
   font-weight: bold;
-  color: rgba(119, 116, 116, 0.664);
-  text-shadow: #312044 1px 1px 1px;
+  color: $zIndex;
+  text-shadow: #312044 0px 0px 1px;
+}
+
+.z-index {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 0;
+  top: 9em;
+  opacity: 0.08;
+  font-weight: 700;
+  color: $zIndex;
+  letter-spacing: 12px;
+}
+
+main {
+  box-shadow: 0 1px 16px 2px #f5f5f5;
 }

@@ -1,9 +1,12 @@
 .my_skills {
-   box-shadow: 0 1px 16px 2px #f5f5f5;
+  //box-shadow: 0 1px 16px 2px #f5f5f5;
 
 h1 {
     text-align: center;
     padding-top: 2em;
+    position: relative;
+    text-shadow: 0px 1px 16px #031421;
+    letter-spacing: 10px;
 }
 
 .skills {
@@ -66,7 +69,7 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
 
     @include small-only {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
 
 
@@ -79,6 +82,15 @@ li {
 
 .language {
     margin-top: 8em;
+
+    @include small-only {
+        margin-top: 1em;
+            }
 }
 
+i {
+    color: $button;
+    text-shadow: 0px 1px 30px #031421;
+    margin-right: 0.8em;
+}
 }
