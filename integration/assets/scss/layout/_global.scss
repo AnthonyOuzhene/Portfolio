@@ -56,6 +56,13 @@ span {
   font-weight: bold;
   color: $zIndex;
   text-shadow: #312044 0px 0px 1px;
+
+  @include large{
+    display: none;
+}
+  @include small-only{
+    display: none;
+}
 }
 
 .z-index {

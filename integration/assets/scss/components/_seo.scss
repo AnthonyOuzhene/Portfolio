@@ -32,7 +32,7 @@
     }
 
     #grid {
-        margin-top: 4em;
+        margin-top: 2em;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 justify-items: center;
@@ -46,11 +46,16 @@ padding-right: 10px;
 //grid-auto-flow: dense;
 row-gap: 4rem;
 
+@include extra-large{
+    grid-template-columns: 1fr 1fr 1fr;
+}
 @include large {
     grid-template-columns: 1fr 1fr;
 }
 @include small-only{
-    grid-template-columns: 1fr;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
     }
 
@@ -58,7 +63,8 @@ row-gap: 4rem;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s ease;
-
+    border: solid 1px #252544;
+    border-radius: 30px;
 }
 
 .grid-img {
@@ -67,6 +73,7 @@ row-gap: 4rem;
     object-fit: contain;
     display: block;
     transition: transform 0.2s ease;
+    
 }
 
 .grid-item:hover {
@@ -81,6 +88,18 @@ row-gap: 4rem;
     z-index: 2;
 }
 
+#nature-2 {
+width: 70%;
 
+@include small-only{
+    width: 30%;
+}
+}
 
+.tablodeco {
+
+    @include small-only{
+        height: inherit;
+    }
+}
 }
