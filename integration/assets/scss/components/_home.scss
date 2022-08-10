@@ -78,7 +78,6 @@
 
 
     ul {
-        display: table;
         border-top: solid #312044 1px;
         padding: 2em;
         margin-top: 1em;
@@ -106,10 +105,12 @@
         border-radius: 20px;
         cursor: pointer;
         padding: 1.5em;
+        box-shadow: 0px 0px 32px #312044;
     }
       
       button:hover {
         background: $textColor;
+        box-shadow: $button 0px 0px 32px;
       }     
 
 }

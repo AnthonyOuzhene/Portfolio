@@ -13,48 +13,32 @@
 
 <body>
     <header class="header">
-        <div class="resume-header">
+
+
+
+        <nav class="navbar dark-mode" role="navigation">
             <div class="welcome">
                 <marquee id="hello">
                     Bonjour ! Bienvenue sur mon portfolio !
                 </marquee>
             </div>
+            <ul class="navbar__links">
+                <li class="navbar__link first" id="first">
+                    <a href="">Profil</a>
+                </li>
+                <li class="navbar__link second" id="second">
+                    <a href="">Compétences</a>
+                </li>
+                <li class="navbar__link third" id="third"><a href="#">Portfolio</a></li>
+                <li class="navbar__link four" id="fourth"><a href="#">SEO</a></li>
+                <li class="navbar__link fifth" id="fifth"><a href="#">Blog</a></li>
+                <li class="navbar__link sixth" id="sixth"><a href="#">Contact</a></li>
+            </ul>
+            <button class="burger">
+                <span class="bar"></span>
+            </button>
+        </nav>
 
-            <nav class="navigation">
-
-                <input type="checkbox" class="toggler" />
-                <div class="hamburger">
-                    <div></div>
-                </div>
-
-                <ul class="menuContent">
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/2949992/pexels-photo-2949992.jpeg?auto=compress&cs=tinysrgb&w=1600)">Profil</a>
-                    </li>
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/301703/pexels-photo-301703.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">Compétences</a>
-                    </li>
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/5827881/pexels-photo-5827881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">Portfolio</a>
-                    </li>
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/12813050/pexels-photo-12813050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)">SEO</a>
-                    </li>
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/5052875/pexels-photo-5052875.jpeg?auto=compress&cs=tinysrgb&w=1600)">Blog</a>
-                    </li>
-                    <li class="menu_item active">
-                        <a class="nav" href=""
-                            style="background-image: url(https://images.pexels.com/photos/326576/pexels-photo-326576.jpeg?auto=compress&cs=tinysrgb&w=1600)">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
 
         <div class="presentation">
 
@@ -84,43 +68,86 @@
             </div>
         </div>
     </header>
-<main>
+    <main>
+        <div class="contact">
 
-    CONTACT 
-    connexion API google maps
-    
-</main>
+            <h1>contact</h1>
+            <span class="z-index">où suis-je ?</span>
 
-<footer>
+            connexion API google maps
 
-    <div class="thanks">
-        <img src="./assets/images/thanks2.png">
-    </div>
+            <!--    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <label class="required" for="name">Nom</label><br />
+          <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+          <span id="name_validation" class="error_message"></span>
+        </div>
+        <div class="row">
+          <label class="required" for="email">Email:</label><br />
+          <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+          <span id="email_validation" class="error_message"></span>
+        </div>
+        <div class="row">
+          <label class="required" for="message">Message:</label><br />
+          <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+          <span id="message_validation" class="error_message"></span>
+        </div>
+          
+          <input id="submit_button" type="submit" value="Envoyer" />
+          
+      </form>
+      -->
 
-    <div class="grid">
-        <nav>
-            <ul class="navigation">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Compétences</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">SEO</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+            <h2 class="contact_me"><i class="fa-solid fa-circle-arrow-down" id="left"></i>Contactez-moi<i
+                    class="fa-solid fa-circle-arrow-down" id="right"></i>
+            </h2>
+
+
+            <ul class="banner-social-buttons">
+                <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i>GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i
+                            class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                </li>
+                <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr"><i
+                            class="fa-brands fa-square-instagram"></i>Instagram</a></li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i>Mail</a></li>
             </ul>
-        </nav>
+        </div>
+    </main>
 
-        <h1>Restons en contact</h1>
+    <footer>
 
-        <ul class="social_media">
-            <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i class="fa-brands fa-linkedin"></i></a>
-            </li>
-            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-            <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-        </ul>
-    </div>
-</footer>
-<script src="./main.js" type="module"></script>
+        <div class="thanks">
+            <img src="./assets/images/thanks2.png">
+        </div>
+
+        <div class="grid">
+            <nav>
+                <ul class="navigation">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Compétences</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">SEO</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <h1>Restons en contact</h1>
+
+            <ul class="social_media">
+                <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr"><i
+                            class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./main.js" type="module"></script>
 </body>
 
 </html>

@@ -1,15 +1,19 @@
 footer {
    background: rgba(13, 18, 24, 1);
+   box-shadow: 0px 0px 16px rgba(13, 18, 24, 1);
 
    .thanks {
     display: flex;
     justify-content: center;
 
+    @include small-only {
+      display: none;
+         }
    }
 
    h1 {
     text-align: center;
-    color: white;
+    color: $mainBackgroundColor;
     margin-top: 2em;
    }
 
@@ -36,7 +40,7 @@ footer {
    .navigation {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
    }
 
    .navigation > li {
@@ -45,9 +49,13 @@ footer {
     
    .navigation > li > a {
     color: #252544;
-    text-shadow: 1px 1px 8px white;
+    text-shadow: $mainBackgroundColor 1px 1px 8px;
     font-weight: 600;
     font-size: 21px;
     font-style: italic;
+   }
+
+   .grid {
+
    }
 }

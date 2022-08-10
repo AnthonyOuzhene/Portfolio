@@ -16,7 +16,7 @@
 }
 
 @mixin large {
-    @media (max-width: 900px) {
+    @media (max-width: 974px) {
         @content;
     }
 }
