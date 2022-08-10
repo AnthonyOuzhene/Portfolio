@@ -1,19 +1,18 @@
 // import des variables
 @import './abstract/colors';
+
 // import des fonts
 @import './abstract/fonts';
 @import './abstract/mixins';
 
-
 // imports des layouts
-@import './layout/header';
-@import './layout/global';
 @import './layout/footer';
+@import './layout/global';
+@import './layout/header';
 
 // imports des composants
-@import './components/burger';
 @import './components/home';
-//@import './components/nav';
+@import './components/nav';
 @import './components/portfolio';
 @import './components/seo';
 @import './components/skills';
