@@ -1,0 +1,14 @@
+vendor
+wordpress
+wp-config.php
+
+/wp-content/*
+!/wp-content
+/wp-content/themes/*
+!/wp-content/themes
+/wp-content/plugins/*
+!/wp-content/plugins
+
+!/wp-content/plugins/twentyseventeen
+
+install.md
