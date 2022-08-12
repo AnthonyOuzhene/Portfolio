@@ -1,0 +1,106 @@
+.contact {
+
+    h1 {
+        text-align: center;
+        padding-top: 2em;
+        position: relative;
+        text-shadow: 0px 1px 16px #031421;
+        letter-spacing: 10px;
+    }
+
+    #contact_form {
+        color: $mainBackgroundColor;
+        text-shadow: black 1px 5px 10px;
+        line-height: 2.8em;
+        box-sizing: border-box;
+        box-shadow: $secondaryColor 1px 5px 10px;
+        background: rgba(17, 8, 51);
+        margin: 8em 15em 4em;
+        border-radius: 15px;
+    }
+
+    #submit_button {
+        font-family: "Monserrat ExtraBold";
+        width: 10%;
+        height: 3em;
+        color: $mainBackgroundColor;
+        text-transform: uppercase;
+        background: $button;
+        font-size: 14px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0px 0px 32px #312044;
+    }
+
+    #submit_button:hover {
+        background: $textColor;
+        box-shadow: $button 0px 0px 32px;
+    }
+
+    h2 {
+        font-size: 42px;
+        text-align: center;
+        padding: 2em;
+    }
+
+
+    #right {
+        padding-left: 0.5em;
+    }
+
+    #left,
+    #right {
+        font-size: 38px;
+    }
+
+    .banner-social-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2em;
+
+        @include large {
+            justify-content: center;
+        }
+
+        @include small-only {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .banner-social-buttons>li {
+        padding: 1.5em;
+
+        @include large {
+            padding: 0.5em;
+        }
+
+        @include small-only {
+            padding: 1.5em;
+        }
+    }
+
+    i {
+        padding-right: 0.5em;
+        font-size: 28px;
+    }
+
+    a {
+        color: $switchThemeColor;
+        font-size: 22px;
+        border: $switchThemeColor solid 2px;
+        padding: 0.8em;
+        box-shadow: $button 0 0 16px;
+    }
+
+    a:hover {
+        letter-spacing: 0.4em;
+        transform: scale(1.1);
+        background-position: -60px;
+        box-shadow: $switchThemeColor 0 0 16px;
+        color: $button;
+        font-size: 28px;
+        border: none;
+    }
+}

@@ -1,0 +1,22 @@
+// import des variables
+@import './abstract/colors';
+
+// import des fonts
+@import './abstract/fonts';
+@import './abstract/mixins';
+
+// imports des layouts
+@import './layout/footer';
+@import './layout/global';
+@import './layout/header';
+
+// imports des composants
+@import './components/blog';
+@import './components/contact';
+@import './components/home';
+@import './components/nav';
+@import './components/portfolio';
+@import './components/seo';
+@import './components/skills';
+
+

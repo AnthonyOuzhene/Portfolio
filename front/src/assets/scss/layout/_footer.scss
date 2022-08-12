@@ -1,0 +1,61 @@
+footer {
+   background: rgba(13, 18, 24, 1);
+   box-shadow: 0px 0px 16px rgba(13, 18, 24, 1);
+
+   .thanks {
+    display: flex;
+    justify-content: center;
+
+    @include small-only {
+     display: none;
+         }
+   }
+
+   h1 {
+    text-align: center;
+    color: $mainBackgroundColor;
+    margin-top: 2em;
+   }
+
+
+   .social_media {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+   }
+
+
+   .social_media > li {
+      padding: 1em;
+   }
+
+   .social_media > li >a {
+      color: $textColor;
+    text-shadow: 1px 1px 8px white;
+    font-size: 32px;;
+
+   }
+
+   .navigation {
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+   }
+
+   .navigation > li {
+      padding: 2em;
+   }
+    
+   .navigation > li > a {
+    color: #252544;
+    text-shadow: $mainBackgroundColor 1px 1px 8px;
+    font-weight: 600;
+    font-size: 21px;
+    font-style: italic;
+   }
+
+   .grid {
+
+   }
+}
