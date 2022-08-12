@@ -1,0 +1,90 @@
+.header {
+  background-image: url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 900px;
+  text-align: center;
+
+  .myself {
+    color: $mainBackgroundColor;
+    text-shadow: black 1px 5px 10px;
+    line-height: 2.8em;
+    box-sizing: border-box;
+    box-shadow: white 1px 5px 10px;
+    background-color: rgba(17, 8, 51, 0.3);
+    margin: 8em 15em 15em;
+    border-radius: 15px;
+  }
+
+  .name {
+    font-size: 55px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $mainBackgroundColor;
+  }
+
+  .job {
+    font-size: 36px;
+    color: #ff3740;
+  }
+
+  .intro {
+    font-size: 26px;
+    text-transform: uppercase;
+    margin-top: 2em;
+    box-sizing: border-box;
+    padding: 0;
+
+  }
+
+  .header_bg_img {
+    height: 100%;
+  }
+
+  #flip {
+    height: 50px;
+    overflow: hidden;
+  }
+  
+  #flip>div>div {
+    height: 50px;
+    padding: 4px 12px;
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+  
+  #flip div:first-child {
+    animation: show 5s linear infinite;
+  }
+  
+  #flip div div {
+    background: #42c58a;
+  }
+  
+  #flip div:first-child div {
+    background: #4ec7f3;
+  }
+  
+  #flip div:last-child div {
+    background: #ff3740;
+  }
+  
+  @keyframes show {
+
+    0% {margin-top: -270px}
+    5% {margin-top: -180px}
+    33% {margin-top: -180px}
+    38% {margin-top: -90px}
+    66% {margin-top: -90px}
+    71% {margin-top: 0px}
+    99% {margin-top: 0px}
+    100% {margin-top: -270px}
+      }
+}
+
+@media (min-width: 900px) {
+  .header {
+    width: 100%;
+}
+}
