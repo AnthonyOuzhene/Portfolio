@@ -22,7 +22,7 @@ import Home from "./components/Home.vue";
         Header,
         Footer,
         Home,
-      } 
+      }
   };
 </script>
 
