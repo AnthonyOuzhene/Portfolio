@@ -7,7 +7,8 @@
     "parcel": "^2.7.0",
     "reset-css": "^5.0.1",
     "sass": "^1.54.4",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "^4.1.5"
   },
   "scripts": {
     "start": "parcel index.html --no-cache",
