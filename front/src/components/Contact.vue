@@ -34,14 +34,14 @@
 
 
             <ul class="banner-social-buttons">
-                <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i>GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i
+                <li><a href="https://github.com/AnthonyOuzhene" target="blank"><i class="fa-brands fa-github"></i>GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/" target="blank"><i
                             class="fa-brands fa-linkedin"></i>LinkedIn</a>
                 </li>
-                <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr"><i
+                <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr" target="blank"><i
                             class="fa-brands fa-square-instagram"></i>Instagram</a></li>
-                <li><a href="#"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
-                <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i>Mail</a></li>
+                <li><a href="#" target="blank"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                <li><a href="mailto:a.ouzhene@gmail.com" target="blank"><i class="fa-solid fa-envelope"></i>Mail</a></li>
             </ul>
         </div>
 </template>

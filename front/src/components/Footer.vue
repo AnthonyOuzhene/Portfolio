@@ -11,37 +11,37 @@
                 <ul class="navigation">
                     <li>
                     <RouterLink to="/">
-                        <a href="#">Accueil</a>
+                        Accueil
                     </RouterLink>
                         </li>
 
                     <li>
                     <RouterLink to="/competences">
-                        <a href="#">Compétences</a>
+                        Compétences
                     </RouterLink>
                     </li>
 
                     <li>
                     <RouterLink to="/portfolio">
-                        <a href="#">Portfolio</a>
+                        Portfolio
                     </RouterLink>
                     </li>
 
                     <li>
                     <RouterLink to="/seo">
-                        <a href="#">SEO</a>
+                        SEO
                     </RouterLink>
                     </li>
 
                     <li>
                     <RouterLink to="/blog">
-                        <a href="#">Blog</a>
+                        Blog
                     </RouterLink>
                     </li>
                     
                     <li>
                     <RouterLink to="/contact">
-                        <a href="#">Contact</a>
+                        Contact
                     </RouterLink>
                     </li>
                 </ul>
