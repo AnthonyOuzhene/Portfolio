@@ -21,7 +21,7 @@
                 <div class="anthony">
                     <p>
                         Bonjour ! Je m'appelle Anthony Ouzhene, développeur web fullstack junior avec une grande soif
-                        d'apprendre afin d'élargir mes connaissances.
+                        d'apprendre, afin d'élargir mes connaissances.
                         Soucieux de produire du code de qualité, pensé Mobile First, j'attache une grande importance à
                         l'expérience utilisateur dans la conception des projets.
                     </p>

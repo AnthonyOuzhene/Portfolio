@@ -30,7 +30,7 @@
               </aside>
               <aside class="profile-card">
                 <header>
-                  <a href="">
+                  <a href="#">
                     <img src="../assets/images/Bricol' Help.png" />
                   </a>
           
