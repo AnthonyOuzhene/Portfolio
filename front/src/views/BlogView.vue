@@ -1,13 +1,13 @@
 <template>
-    <Home/>
+    <Blog/>
 </template>
 
 <script>
-import Home from "../components/Home.vue";
+import Blog from "../components/Blog.vue";
 
 export default {
     components: {
-        Home,
+        Blog,
     }
 };
 </script>

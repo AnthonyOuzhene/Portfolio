@@ -1,5 +1,4 @@
 <template>
-    <main>
         <div class="home">
 
             <h1>Qui suis-je ?</h1>
@@ -56,8 +55,6 @@
             </div>
             
         </div>
-    </main>
-
 </template>
 
 <script>

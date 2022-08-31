@@ -1,13 +1,13 @@
 <template>
-    <Home/>
+    <Seo/>
 </template>
 
 <script>
-import Home from "../components/Home.vue";
+import Seo from "../components/Seo.vue";
 
 export default {
     components: {
-        Home,
+        Seo,
     }
 };
 </script>

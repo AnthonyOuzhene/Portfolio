@@ -1,13 +1,13 @@
 <template>
-    <Home/>
+    <Contact/>
 </template>
 
 <script>
-import Home from "../components/Home.vue";
+import Contact from "../components/Contact.vue";
 
 export default {
     components: {
-        Home,
+        Contact,
     }
 };
 </script>

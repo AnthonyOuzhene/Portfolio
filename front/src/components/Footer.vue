@@ -9,12 +9,41 @@
         <div class="grid">
             <nav>
                 <ul class="navigation">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Compétences</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">SEO</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li>
+                    <RouterLink to="/">
+                        <a href="#">Accueil</a>
+                    </RouterLink>
+                        </li>
+
+                    <li>
+                    <RouterLink to="/competences">
+                        <a href="#">Compétences</a>
+                    </RouterLink>
+                    </li>
+
+                    <li>
+                    <RouterLink to="/portfolio">
+                        <a href="#">Portfolio</a>
+                    </RouterLink>
+                    </li>
+
+                    <li>
+                    <RouterLink to="/seo">
+                        <a href="#">SEO</a>
+                    </RouterLink>
+                    </li>
+
+                    <li>
+                    <RouterLink to="/blog">
+                        <a href="#">Blog</a>
+                    </RouterLink>
+                    </li>
+                    
+                    <li>
+                    <RouterLink to="/contact">
+                        <a href="#">Contact</a>
+                    </RouterLink>
+                    </li>
                 </ul>
             </nav>
 
