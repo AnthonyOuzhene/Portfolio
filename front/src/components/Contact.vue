@@ -4,7 +4,20 @@
             <h1>contact</h1>
             <span class="z-index">où suis-je ?</span>
 
-            connexion API google maps
+  <GMapMap class="map"
+      :center="center"
+      :zoom="11"
+      map-type-id="terrain"
+      style="width: 1000px; height: 500px"
+  >
+      <GMapMarker
+      :key="index"
+      v-for="(m, index) in markers"
+      :position="m.position"
+      :clickable="true"
+      :draggable="true"
+    />
+  </GMapMap>
 
             <!--    <form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
         <div class="row">
@@ -47,9 +60,27 @@
 </template>
 
 <script>
+
+
 export default {
-    
+  data() {
+    return {
+            center: {lat: 49.683360, lng: 0.201850},
+      markers: [
+        {
+          position: {
+            lat: 49.683360, lng: 0.201850
+          },
+        }
+        , // Along list of clusters
+      ]
+    }
+  },
+  methods: {
+
+  },
 }
+  
 </script>
 
 <style lang="scss" scoped>
