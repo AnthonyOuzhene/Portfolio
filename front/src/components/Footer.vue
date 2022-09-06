@@ -50,10 +50,12 @@
             <h1>Restons en contact</h1>
 
             <ul class="social_media">
-                <li><a href="https://github.com/AnthonyOuzhene"><i class="fa-brands fa-github"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/"><i class="fa-brands fa-linkedin"></i></a>
+                <li><a href="https://github.com/AnthonyOuzhene" target="blank"><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/anthony-ouzhene/" target="blank"><i class="fa-brands fa-linkedin"></i></a>
                 </li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr" target="blank"><i class="fa-brands fa-square-instagram"></i></a>
+                </li>
+                <li><a href="" target="blank"><i class="fa-brands fa-twitter"></i></a></li>
                 <li><a href="mailto:a.ouzhene@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
             </ul>
         </div>

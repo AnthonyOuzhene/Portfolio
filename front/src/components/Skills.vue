@@ -1,7 +1,7 @@
 <template>
   <div class="my_skills">
             <h1>Mes compétences</h1>
-        <span class="z-index">Skills</span>
+        <span class="z-index">Aptitudes</span>
 
             <section class="skills">
                 <div class="left-skills">
