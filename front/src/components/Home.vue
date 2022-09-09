@@ -45,11 +45,11 @@
                 </div>
 
                 <div>
-                    <a href="https://www.facebook.com/">
-                        <button class="cv" type=button>
+                    
+                        <button class="cv" type=button @click="downloadPDF" download="download">
                             <i class="fa-solid fa-download"></i>
                             Télécharger CV</button>
-                    </a>
+                    
                 </div>
 
             </div>
@@ -58,10 +58,19 @@
 </template>
 
 <script>
+
+import jsPDF from 'jspdf';
+
 export default {
     data() {
         return{
-
+            
+        }
+    },
+    methods:{
+        downloadPDF() {
+            const pdf = new jsPDF();
+        pdf.save('CV ouzhene Anthony');
         }
     }
 }
