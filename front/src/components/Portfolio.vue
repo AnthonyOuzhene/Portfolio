@@ -30,7 +30,8 @@
 
             <div id="overlay" class="overlay">
               <div id="popup" class="popup">
-              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Break Fast<span id="btnClose" class="btnClose">&times;</span></h2>
+              <img>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
             </div>
             </div>
