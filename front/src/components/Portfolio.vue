@@ -13,9 +13,8 @@
 
             <aside class="profile-card">
                 <header>
-                  <a href="#">
-                    <img src="../assets/images/breakfast.png" />
-                  </a>
+                  
+                    <img id="btnPopup" class="btnPopup" src="../assets/images/breakfast.png" />
           
                   <h1>Break Fast</h1>
           
@@ -28,11 +27,18 @@
                   </p>
                 </div>
               </aside>
+
+            <div id="overlay" class="overlay">
+              <div id="popup" class="popup">
+              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+            </div>
+            </div>
+
+
               <aside class="profile-card">
                 <header>
-                  <a href="#">
-                    <img src="../assets/images/Bricol' Help.png" />
-                  </a>
+                    <img id="btnPopup" class="btnPopup" src="../assets/images/Bricol' Help.png" />
           
                   <h1>Bricol'Help</h1>
           
@@ -45,11 +51,17 @@
                   </p>
                 </div>
               </aside>
+
+              <div id="overlay" class="overlay">
+              <div id="popup" class="popup">
+              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+            </div>
+            </div>
+
               <aside class="profile-card">
                 <header>
-                  <a href="#">
                     <img src="../assets/images/Boog'ink.jpg" />
-                  </a>
           
                   <h1>Boog'Ink <br> Lady Piercing</h1>
           
@@ -62,9 +74,7 @@
               </aside>
               <aside class="profile-card">
                 <header>
-                  <a href="#">
                     <img src="../assets/images/wrestling.jpg" />
-                  </a>
           
                   <h1>Soon</h1>
           
@@ -82,6 +92,8 @@
 </template>
 
 <script>
+  
+
 export default {
     
 }
