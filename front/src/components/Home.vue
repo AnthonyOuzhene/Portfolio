@@ -35,7 +35,7 @@
                     </p>
                     <p>
                         Vous trouverez ici une vitrine de mes travaux réalisés.
-                        Vous pouvez également télécharger mon CV pour prendre connaissance de mon parcours et me
+                        Vous pouvez également découvrir mon CV pour prendre connaissance de mon parcours et me
                         contacter si
                         vous le souhaitez.
                     </p>
@@ -45,11 +45,12 @@
                 </div>
 
                 <div>
-                    
-                        <button class="cv" type=button @click="downloadPDF" download="download">
+                    <a href="https://www.canva.com/design/DAE68W4gsrM/DPfaTZTt9n7Wbdf4n4bb2w/view?utm_content=DAE68W4gsrM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink" target="bla">
+                        <button class="cv" type=button>
                             <i class="fa-solid fa-download"></i>
-                            Télécharger CV</button>
-                    
+                            C'est par ici
+                            </button>
+                            </a>
                 </div>
 
             </div>
@@ -59,7 +60,11 @@
 
 <script>
 
-import jsPDF from 'jspdf';
+// Dépendance jspdf pour télécharger nouveau document vierge au format pdf
+//import jsPDF from 'jspdf';
+
+// TODO : 
+// POUVOIR TELECHARGER SUR MANIGATEUR MON PDF 
 
 export default {
     data() {
@@ -68,10 +73,10 @@ export default {
         }
     },
     methods:{
-        downloadPDF() {
-            const pdf = new jsPDF();
-        pdf.save('CV ouzhene Anthony');
-        }
+       // downloadPDF() {
+        //    const pdf = new jsPDF();
+   //pdf.save('CV ouzhene Anthony');
+     //   }
     }
 }
 </script>
