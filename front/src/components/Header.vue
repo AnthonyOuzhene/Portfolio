@@ -51,7 +51,7 @@
             <img class="header_bg_img">
             <h1 class="name">Ouzhene Anthony</h1>
 
-            <h2 class="job">Développeur web Full-stack / Back-end</h2>
+            <h2 class="job">Developpeur web Full-stack / Back-end</h2>
 
             <div class="intro">
                 Créations

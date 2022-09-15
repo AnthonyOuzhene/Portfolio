@@ -62,7 +62,7 @@
 
               <aside class="profile-card">
                 <header>
-                    <img src="../assets/images/Boog'ink.jpg" />
+                    <img  id="btnPopup" class="btnPopup" src="../assets/images/Boog'ink.jpg" />
           
                   <h1>Boog'Ink <br> Lady Piercing</h1>
           
@@ -73,9 +73,17 @@
                   <p>Site vitrine moderne d'un salon de tatouage et piercing</p>
                 </div>
               </aside>
+
+              <div id="overlay" class="overlay">
+              <div id="popup" class="popup">
+              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+            </div>
+            </div>
+
               <aside class="profile-card">
                 <header>
-                    <img src="../assets/images/wrestling.jpg" />
+                    <img id="btnPopup" class="btnPopup" src="../assets/images/wrestling.jpg" />
           
                   <h1>Soon</h1>
           
@@ -87,17 +95,25 @@
                     Site visant à gérer et développer son propre roster de catch américain
                   </p>
                 </div>
-              </aside>           
+              </aside> 
+
+              <div id="overlay" class="overlay">
+              <div id="popup" class="popup">
+              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+            </div>
+            </div>          
         </section>
     </div>      
 </template>
 
 <script>
-  
+
 
 export default {
-    
-}
+
+ }   
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 const btnPopup = document.querySelectorAll('#btnPopup');
-const overlay = document.querySelector('#overlay');
+const overlay = document.getElementById('overlay');
 const btnClose = document.querySelectorAll('#btnClose');
 
 for (const popup of btnPopup) {
