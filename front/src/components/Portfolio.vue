@@ -31,8 +31,28 @@
             <div id="overlay" class="overlay">
               <div id="popup" class="popup">
               <h2>Break Fast<span id="btnClose" class="btnClose">&times;</span></h2>
-              <img>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+
+              <ul>
+                <li class="input">Intégration HTML / CSS</li>
+                <li class="input">Site responsive</li>
+                <li class="input">Référencement naturel SEO</li>
+                <li class="input">Développement des API REST sous Symfony</li>
+                <li class="input">Connexion avec Token JWT</li>
+                <li class="input">Connection aux API avec REACT / axios</li>
+              </ul>
+
+              <div class="screenshot">
+                 <figure class="main_site">
+                      <img src="../assets/images/bakery_list.png" alt="bakery_list">
+                      <figcaption>Liste des boulangeries du site trouvée depuis la connection de l'API de localisation de Google</figcaption>
+                      <img src="../assets/images/basket.png" alt="basket">
+                  <figcaption>Validation des articles du panier</figcaption>
+                  </figure>
+                  <div class="bo">
+                     <img  src="../assets/images/BO_bakery.png">
+                     <figcaption>Présentation du Back office avec le moteur de templating Twig de Symfony</figcaption>
+                  </div>
+              </div>
             </div>
             </div>
 
@@ -55,8 +75,27 @@
 
               <div id="overlay" class="overlay">
               <div id="popup" class="popup">
-              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+              <h2>Bricol'help<span id="btnClose" class="btnClose">&times;</span></h2>
+
+               <ul>
+                <li class="input">Integration HTML / CSS</li>
+                <li class="input">Site responsive</li>
+                <li class="input">Référencement naturel SEO</li>
+                <li class="input">Développement des API REST sous Symfony</li>
+                <li class="input">Connexion avec Token JWT</li>
+                <li class="input">Connection au API avec REACT / axios</li>
+              </ul>
+
+              <div class="screenshot">
+                 <figure class="main_site">
+                      <img src="../assets/images/Bricol' Help.png" alt="bricol'help-main-site">
+                      <figcaption>Liste des boulangeries du site trouvée depuis la connection de l'API de localisation de Google</figcaption>
+                  </figure>
+                  <div class="bo">
+                      <img src="../assets/images/BO-bricol.png" alt="backoffice">
+                  <figcaption>Validation des articles du panier</figcaption>
+                  </div>
+              </div>
             </div>
             </div>
 
@@ -76,7 +115,7 @@
 
               <div id="overlay" class="overlay">
               <div id="popup" class="popup">
-              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Boog'ink<span id="btnClose" class="btnClose">&times;</span></h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
             </div>
             </div>
@@ -99,7 +138,7 @@
 
               <div id="overlay" class="overlay">
               <div id="popup" class="popup">
-              <h2>Exemple de popup<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Wrestling<span id="btnClose" class="btnClose">&times;</span></h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
             </div>
             </div>          

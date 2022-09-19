@@ -53,6 +53,7 @@ header img {
   border: 5px solid #fff;
   max-width: 100%;
   box-shadow: 0px 1px 32px #252544;
+  height: 200px;
 }
 
 
@@ -443,15 +444,26 @@ aside:hover ul li:nth-child(3) {
   width: 100%;
   height: 100%;
   display: none;
+  overflow: scroll;
 }
 
+::-webkit-scrollbar {
+  display: none;
+  }
+
 .popup {
-  margin: 20% auto;
-  width: 70%;
+  margin: 2em auto;
+  width: 60%;
   background-color: rgb(228, 228, 228);
   border-radius: 5px;
   box-shadow: 15px 20px 0 rgba(0,0,0,0.5);
   padding: 1em;
+  
+}
+
+.popup > h2 {
+  text-align: center;
+  border-bottom: solid #252544 1px;
 }
 
 .btnClose {
@@ -459,4 +471,48 @@ aside:hover ul li:nth-child(3) {
   cursor: pointer;
 }
 
+.main_site > img{
+  width: 40%;
+  margin-top: 2em;
+  box-shadow: 0px 0px 15px #312044;
+}
+
+.main_site > img:hover{
+  cursor:pointer;
+  width: 80%;
+}
+
+.bo > img{
+  width: 40%;
+  margin-top: 2em;
+  box-shadow: 0px 0px 15px #312044;
+}
+
+.bo > img:hover{
+  cursor:pointer;
+  width: 100%;
+}
+
+ul {
+  text-align: center;
+  margin-top: 1em;
+  list-style: circle;
+  list-style-position: inside;
+}
+
+.input {
+  font-size: 17px;
+}
+
+figcaption {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  
+}
+
+.screenshot {
+  text-align: center;
+}
 }
