@@ -36,7 +36,8 @@
                 <li class="input">Intégration HTML / CSS</li>
                 <li class="input">Site responsive</li>
                 <li class="input">Référencement naturel SEO</li>
-                <li class="input">Développement des API REST sous Symfony</li>
+                <li class="input">Base de données MySQL générée avec les migrations de Symfony</li>
+                <li class="input">API REST / ACL / Hierarchie des rôles / Forms</li>
                 <li class="input">Connexion avec Token JWT</li>
                 <li class="input">Connection aux API avec REACT / axios</li>
               </ul>
