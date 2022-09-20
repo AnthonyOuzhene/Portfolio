@@ -14,7 +14,7 @@
             <aside class="profile-card">
                 <header>
                   
-                    <img id="btnPopup" class="btnPopup" src="../assets/images/breakfast.png" />
+                    <img id="btnPopup" class="btnPopup breakfast" src="../assets/images/breakfast.png" />
           
                   <h1>Break Fast</h1>
           
@@ -28,9 +28,9 @@
                 </div>
               </aside>
 
-            <div id="overlay" class="overlay">
+            <div id="overlay" class="overlay popupbreakfast">
               <div id="popup" class="popup">
-              <h2>Break Fast<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Break Fast<span id="btnClose" class="btnClose breakfast">&times;</span></h2>
 
               <ul>
                 <li class="input">Intégration HTML / CSS</li>
@@ -59,7 +59,7 @@
 
               <aside class="profile-card">
                 <header>
-                    <img id="btnPopup" class="btnPopup" src="../assets/images/Bricol' Help.png" />
+                    <img id="btnPopup" class="btnPopup bricolhelp" src="../assets/images/Bricol' Help.png" />
           
                   <h1>Bricol'Help</h1>
           
@@ -73,9 +73,9 @@
                 </div>
               </aside>
 
-              <div id="overlay" class="overlay">
+              <div id="overlay" class="overlay popupbricolhelp">
               <div id="popup" class="popup">
-              <h2>Bricol'help<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Bricol'help<span id="btnClose" class="btnClose closebricolhelp">&times;</span></h2>
 
                <ul>
                 <li class="input">Integration HTML / CSS</li>

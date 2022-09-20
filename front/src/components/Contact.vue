@@ -53,7 +53,7 @@
                 </li>
                 <li><a href="https://www.instagram.com/zen_dev_redac/?hl=fr" target="blank"><i
                             class="fa-brands fa-square-instagram"></i>Instagram</a></li>
-                <li><a href="#" target="blank"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                <li><a href="https://twitter.com/AnthonyZen17" target="blank"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
                 <li><a href="mailto:a.ouzhene@gmail.com" target="blank"><i class="fa-solid fa-envelope"></i>Mail</a></li>
             </ul>
         </div>
