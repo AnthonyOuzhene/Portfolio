@@ -75,25 +75,27 @@
 
               <div id="overlay" class="overlay popupbricolhelp">
               <div id="popup" class="popup">
-              <h2>Bricol'help<span id="btnClose" class="btnClose closebricolhelp">&times;</span></h2>
+              <h2>Bricol' Help<span id="btnClose" class="btnClose closebricolhelp">&times;</span></h2>
 
                <ul>
-                <li class="input">Integration HTML / CSS</li>
+                <li class="input">Integration HTML / CSS / SASS</li>
                 <li class="input">Site responsive</li>
                 <li class="input">Référencement naturel SEO</li>
-                <li class="input">Développement des API REST sous Symfony</li>
+                <li class="input">Back-office Wordpress avec plugin sur mesure => CPT, Taxonomies et CAPS</li>
+                <li class="input">Interface front travaillée avec Vue.js => système de services pour connexion aux API</li>
                 <li class="input">Connexion avec Token JWT</li>
-                <li class="input">Connection au API avec REACT / axios</li>
               </ul>
 
               <div class="screenshot">
                  <figure class="main_site">
-                      <img src="../assets/images/Bricol' Help.png" alt="bricol'help-main-site">
-                      <figcaption>Liste des boulangeries du site trouvée depuis la connection de l'API de localisation de Google</figcaption>
+                      <img src="../assets/images/home-bricol.png" alt="bricol'help-main-site">
+                      <figcaption>Page d'accueil avec différentes catégories de tutoriels. Au clic, les tutoriels de la catégorie apparaissent.</figcaption>
+                       <img src="../assets/images/tuto.png" alt="bricol'help-tuto">
+                      <figcaption>Exemple de tutoriel. Un système de commentaire est disponible une fois l'utilisateur connecté.</figcaption>
                   </figure>
                   <div class="bo">
                       <img src="../assets/images/BO-bricol.png" alt="backoffice">
-                  <figcaption>Validation des articles du panier</figcaption>
+                  <figcaption>Admnisitration WordPress avec Custom Post Type, Taxonomies personnalisées et Capabilities assignés aux différents users.</figcaption>
                   </div>
               </div>
             </div>
@@ -101,7 +103,7 @@
 
               <aside class="profile-card">
                 <header>
-                    <img  id="btnPopup" class="btnPopup" src="../assets/images/Boog'ink.jpg" />
+                    <img  id="btnPopup" class="btnPopup boogink" src="../assets/images/Boog'ink.jpg" />
           
                   <h1>Boog'Ink <br> Lady Piercing</h1>
           
@@ -113,7 +115,7 @@
                 </div>
               </aside>
 
-              <div id="overlay" class="overlay">
+              <div id="overlay" class="overlay popupboogink">
               <div id="popup" class="popup">
               <h2>Boog'ink<span id="btnClose" class="btnClose">&times;</span></h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
@@ -122,7 +124,7 @@
 
               <aside class="profile-card">
                 <header>
-                    <img id="btnPopup" class="btnPopup" src="../assets/images/wrestling.jpg" />
+                    <img id="btnPopup" class="btnPopup kingsport" src="../assets/images/wrestling.jpg" />
           
                   <h1>Soon</h1>
           
@@ -136,9 +138,9 @@
                 </div>
               </aside> 
 
-              <div id="overlay" class="overlay">
+              <div id="overlay" class="overlay popupkingsport">
               <div id="popup" class="popup">
-              <h2>Wrestling<span id="btnClose" class="btnClose">&times;</span></h2>
+              <h2>Kings' Sport<span id="btnClose" class="btnClose">&times;</span></h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
             </div>
             </div>          

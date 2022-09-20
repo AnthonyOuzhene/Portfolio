@@ -479,7 +479,8 @@ aside:hover ul li:nth-child(3) {
 
 .main_site > img:hover{
   cursor:pointer;
-  width: 80%;
+  width: 100%;
+  transition: 3s;
 }
 
 .bo > img{
@@ -491,6 +492,8 @@ aside:hover ul li:nth-child(3) {
 .bo > img:hover{
   cursor:pointer;
   width: 100%;
+  transition: 3s;
+
 }
 
 ul {
