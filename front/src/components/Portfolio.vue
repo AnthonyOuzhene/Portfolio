@@ -39,7 +39,7 @@
                 <li class="input">Base de données MySQL générée avec les migrations de Symfony</li>
                 <li class="input">API REST / ACL / Hierarchie des rôles / Forms</li>
                 <li class="input">Connexion avec Token JWT</li>
-                <li class="input">Connection aux API avec REACT / axios</li>
+                <li class="input">Connexion aux API avec REACT / axios</li>
               </ul>
 
               <div class="screenshot">
@@ -118,8 +118,9 @@
 
               <div id="overlay" class="overlay popupboogink">
               <div id="popup" class="popup">
-              <h2>Boog'ink<span id="btnClose" class="btnClose">&times;</span></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+              <h2>Boogi'ink - Lady Piercing<span id="btnClose" class="btnClose">&times;</span></h2>
+              <a href="#" target="blank">Visiter le site</a>
+              <p>Descriptif à venir</p>
             </div>
             </div>
 
@@ -142,7 +143,7 @@
               <div id="overlay" class="overlay popupkingsport">
               <div id="popup" class="popup">
               <h2>Kings' Sport<span id="btnClose" class="btnClose">&times;</span></h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa illo nemo quos praesentium sed, recusandae atque necessitatibus eius, et ipsam at. Iusto, officiis! Natus assumenda dolor impedit quis magnam praesentium.</p>
+              <p>Infos à venir</p>
             </div>
             </div>          
         </section>
@@ -150,10 +151,22 @@
 </template>
 
 <script>
-
+import popupService from '../services/popupService.js';
 
 export default {
+  data() {
+    return {
 
+    }
+  },
+methods: {
+  loadPopup() {
+    popupService.init()
+  },
+mounted() {
+  this.loadPopup();
+}
+}
  }   
 
 </script>

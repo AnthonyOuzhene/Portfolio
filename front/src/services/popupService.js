@@ -1,24 +1,27 @@
- const popup = {
+const popup = {
 
-     init: function() {
+    init: function() {
 
         const btnPopup = document.querySelectorAll('#btnPopup');
         for (const currentPopup of btnPopup) {
-             console.log(currentPopup.classList[1])
+            // console.log(currentPopup.classList[1])
             currentPopup.addEventListener('click', () => {
                 popup.openModal(currentPopup.classList[1])
             });
         }  
 
-         const btnClose = document.querySelectorAll('#btnClose');
-         for (const currentBtnClose of btnClose) {
-             currentBtnClose.addEventListener('click', popup.closePopup)}
-     },
+        const btnClose = document.querySelectorAll('#btnClose');
+        for (const currentBtnClose of btnClose) {
+            currentBtnClose.addEventListener('click', popup.closePopup)}
+    },
 
     openModal: function(btnClassName) {
+        // console.log(btnClassName)
+        const overlay = document.querySelector('.popup'+ btnClassName);
         
-        const overlay = document.querySelector('.popup'+ btnClassName);      
+       // for (const currentOverlay of overlay) {
         overlay.style.display = 'block';
+        //}
         },
 
     closePopup: function() {

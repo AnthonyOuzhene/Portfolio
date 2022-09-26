@@ -518,4 +518,20 @@ figcaption {
 .screenshot {
   text-align: center;
 }
+
+p {
+  text-align: center;
+  margin-top: 1em;
+}
+
+a {
+  font-size: 17px;
+  font-style: italic;
+  text-decoration: none;
+  cursor: pointer;
+  color: $button;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5em;
+}
 }
