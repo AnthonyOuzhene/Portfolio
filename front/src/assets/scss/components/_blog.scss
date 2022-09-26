@@ -11,7 +11,109 @@
     text-align: center;
     margin-top: 4em;
     margin-bottom: 4em;
-
   }
+
+  .postList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 5em 2em;
+    grid-gap: 3em;
+
+    @include large {
+      grid-template-columns: 1fr 1fr;
+  }
+  @include small-only{
+      grid-template-columns: 1fr;
+  }
+  }
+
+  a {
+    width: 100%;
+    text-decoration: none;
+    color: $textColor;
+  }
+
+  article:hover {
+    box-shadow: 0px 0px 32px $button;
+    transform: scale(1.1);
+    transition: 0.8s;
+  }
+
+  .article {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 1px 20px $textColor;
+    background: rgb(228, 228, 228);;
+    position: relative;
   
+    .fit-picture {
+      border-radius: 20px;
+      height: 250px;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .btn {
+      position: absolute;
+      bottom: -20px;
+      right: -0.5px;
+      border: none;
+      outline: none;
+      display: flex;
+      align-items: center;
+      background-color: $button;
+      color: rgb(228, 228, 228);
+      padding: 20px 30px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px $switchThemeColor;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+      i {
+        margin-left: 20px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom : 3em;
+  }
+  ul >li {
+      cursor: pointer; 
+      width: fit-content;
+      font-size: 16px;
+      margin-right: 1em;
+      padding: 0.5em;
+      border-radius: 15px;
+      box-shadow: 0 0 10px $switchThemeColor;
+      font-family: "Raleway Light";
+      color: white;
+      background: $button;
+      text-shadow: 0px 1px 16px #031421;
+    }
+
+  .title {
+    text-align: center;
+    margin-bottom : 2em;
+
+    h1 {
+      color: $textColor;
+      font-weight: bolder;
+      // padding-bottom: 10px;
+      font-size: 16px;
+      text-shadow: 0px 1px 16px #031421;    
+    }
+    
+  }
+  .content {
+    font-size: 18px;
+    line-height: 1.2;
+    color: $textColor;
+    text-align: center;
+    padding: 0 2em 2em;
+  }
 }
