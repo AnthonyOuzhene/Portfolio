@@ -1,6 +1,6 @@
-const popup = {
+export default {
 
-    init: function() {
+    init() {
 
         const btnPopup = document.querySelectorAll('#btnPopup');
         for (const currentPopup of btnPopup) {
@@ -15,23 +15,23 @@ const popup = {
             currentBtnClose.addEventListener('click', popup.closePopup)}
     },
 
-    openModal: function(btnClassName) {
+    openModal(btnClassName) {
         // console.log(btnClassName)
         const overlay = document.querySelector('.popup'+ btnClassName);
         
-       // for (const currentOverlay of overlay) {
-        overlay.style.display = 'block';
-        //}
+        // for (const currentOverlay of overlay) {
+            overlay.style.display = 'block';
+            //}
         },
-
-    closePopup: function() {
         
-        const AllOverlay = document.querySelectorAll('#overlay');
-        // on passe le display à none pour fermer la fenètre au click sur croix
-        for (let currentOverlay of AllOverlay) {
-            currentOverlay.style.display = 'none';
+        closePopup() {
+            
+            const AllOverlay = document.querySelectorAll('#overlay');
+            // on passe le display à none pour fermer la fenètre au click sur croix
+            for (let currentOverlay of AllOverlay) {
+                currentOverlay.style.display = 'none';
+            }
         }
-        }
-}
-
-document.addEventListener('DOMContentLoaded', popup.init);
+    }
+    
+// document.addEventListener('DOMContentLoaded', popup.init);

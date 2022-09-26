@@ -14,7 +14,7 @@
             <aside class="profile-card">
                 <header>
                   
-                    <img id="btnPopup" class="btnPopup breakfast" src="../assets/images/breakfast.png" />
+                    <img id="btnPopup" class="btnPopup breakfast" src="../assets/images/breakfast.png" >
           
                   <h1>Break Fast</h1>
           
@@ -161,7 +161,7 @@ export default {
   },
 methods: {
   loadPopup() {
-    popupService.init()
+    popupService.init();
   },
 mounted() {
   this.loadPopup();
