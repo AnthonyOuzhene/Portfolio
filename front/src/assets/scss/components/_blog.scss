@@ -35,8 +35,8 @@
 
   article:hover {
     box-shadow: 0px 0px 32px $button;
-    transform: scale(1.1);
-    transition: 0.8s;
+    // transform: scale(1.1);
+    // transition: 0.8s;
   }
 
   .article {
@@ -53,28 +53,29 @@
       background-size: cover;
       background-repeat: no-repeat;
     }
-    .btn {
-      position: absolute;
-      bottom: -20px;
-      right: -0.5px;
-      border: none;
-      outline: none;
-      display: flex;
-      align-items: center;
-      background-color: $button;
-      color: rgb(228, 228, 228);
-      padding: 20px 30px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      text-shadow: 0 0 15px $switchThemeColor;
-      border-radius: 20px;
-      cursor: pointer;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
-      i {
-        margin-left: 20px;
-        font-size: 1.5rem;
-      }
-    }
+    
+    // .btn {
+    //   position: absolute;
+    //   bottom: -20px;
+    //   right: -0.5px;
+    //   border: none;
+    //   outline: none;
+    //   display: flex;
+    //   align-items: center;
+    //   background-color: $button;
+    //   color: rgb(228, 228, 228);
+    //   padding: 20px 30px;
+    //   font-size: 0.8rem;
+    //   text-transform: uppercase;
+    //   text-shadow: 0 0 15px $switchThemeColor;
+    //   border-radius: 20px;
+    //   cursor: pointer;
+    //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+    //   i {
+    //     margin-left: 20px;
+    //     font-size: 1.5rem;
+    //   }
+    // }
   }
 
   ul {

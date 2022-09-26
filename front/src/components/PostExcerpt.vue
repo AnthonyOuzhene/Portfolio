@@ -21,7 +21,7 @@
                 {{ postData.excerpt}}
             </p>
 
-            <button class="btn">Voir plus<i class="fa fa-arrow-right"></i></button>
+            <!-- <button class="btn">Voir plus<i class="fa fa-arrow-right"></i></button> -->
         </a>
     </article>
 
