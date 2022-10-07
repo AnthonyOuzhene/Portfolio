@@ -1,11 +1,11 @@
 <template>
 
-    <article class="article">
+        <article class="article">
         <a href="#">
             <img class="fit-picture">
 
             <div class="title">
-                <h1>{{ postData.title.rendered }}</h1>
+                <h1>Hello</h1>
             </div>
 
             <div class="category">
@@ -18,26 +18,26 @@
             </div>
 
             <p class="content">
-                {{ postData.excerpt.rendered}}
+                Bla bla
             </p>
 
             <!-- <button class="btn">Voir plus<i class="fa fa-arrow-right"></i></button> -->
         </a>
     </article>
 
-
 </template>
 
 <script>
-import App from '../App.vue'
+
 export default {
-  components: { App },
-    data(){
+    data() {
         return {
-
+            postData: {
+                title: {
+                    rendered: "",
+                }
+            }
         }
-    },
-
-    props: ['postData'],
+    }
 }
 </script>

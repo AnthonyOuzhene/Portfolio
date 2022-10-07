@@ -7,8 +7,9 @@ import SkillsView from "./views/SkillsView.vue";
 import PortfolioView from "./views/PortfolioView.vue";
 import SeoView from "./views/SeoView.vue";
 import BlogView from "./views/BlogView.vue";
+import PostSingleView from './views/PostSingleView.vue'
 import ContactView from "./views/ContactView.vue";
-
+import NotFoundView from "./views/NotFoundView.vue";
 
 
 // on définit des routes. C'est un array qui contient des objets sours la forme {path, component} (on ne choisit pes les noms de propriétés)
@@ -19,7 +20,9 @@ const routes = [
     { path: '/portfolio', component: PortfolioView, name: "portfolio" },
     { path: '/seo', component: SeoView, name: "seo" },
     { path: '/blog', component: BlogView, name: "blog" },
+    { path: '/post/:postId', component: PostSingleView, name: "post" },
     { path: '/contact', component: ContactView, name: "contact" },
+    { path: '/:pathMatch(.*)*', component: NotFoundView, name: "error"},
 ]
 
 
