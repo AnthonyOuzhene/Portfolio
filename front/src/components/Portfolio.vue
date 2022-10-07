@@ -102,11 +102,54 @@
             </div>
             </div>
 
+            <aside class="profile-card">
+                <header>
+                    <img  id="btnPopup" class="btnPopup oflix" src="../assets/images/oflix.png" />
+          
+                  <h1>O' flix</h1>
+          
+                  <h2>Symfony</h2>
+                </header>
+          
+                <div class="profile-bio">
+                  <a href="http://anthonyouzhene-server.eddi.cloud/symfo-oflix-final-AnthonyOuzhene/public/" target="blank">Visiter le site</a>
+                  <p>Plateforme fictive de séries TV et films et de pop-corn</p>
+                </div>
+              </aside>
+
+              <div id="overlay" class="overlay popupoflix">
+              <div id="popup" class="popup">
+              <h2>O' flix<span id="btnClose" class="btnClose">&times;</span></h2>
+              <a href="http://anthonyouzhene-server.eddi.cloud/symfo-oflix-final-AnthonyOuzhene/public/" target="blank">Visiter le site</a>
+                            <ul>
+                <li class="input">Projet responsive en full Symfony => moteur de template Twig</li>
+                <li class="input">Service pour récupérer API des films</li>
+                <li class="input">Fixtures pour alimenter la Base de données</li>
+                <li class="input">Backoffice disponible à la connexion admin</li>
+                <li class="input">Access Control List selon les rôles attribués</li>
+                <li class="input">Gestion de l'ajout des favoris</li>
+              </ul>
+
+              <div class="screenshot">
+                 <figure class="main_site">
+                      <img src="../assets/images/oflix-details.png" alt="bakery_list">
+                      <figcaption>Détails d'une serie TV avec possiblité d'ajout aux favoris.</figcaption>
+                      <img src="../assets/images/oflix-fav.png" alt="basket">
+                  <figcaption>Onglet "Ma Liste" des ajouts en favoris avec message Flash.</figcaption>
+                  </figure>
+                  <div class="bo">
+                     <img  src="../assets/images/oflix-backoffice.png">
+                     <figcaption>Back office fait avec le moteur de templating Twig de Symfony et Bootstrap.</figcaption>
+                  </div>
+              </div>
+            </div>
+            </div>
+
               <aside class="profile-card">
                 <header>
                     <img  id="btnPopup" class="btnPopup boogink" src="../assets/images/Boog'ink.jpg" />
           
-                  <h1>Boog'Ink <br> Lady Piercing</h1>
+                  <h1>Boogi'Ink <br> Lady Piercing</h1>
           
                   <h2>Symfony - Vue.js</h2>
                 </header>
