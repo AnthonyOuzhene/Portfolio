@@ -1,0 +1,17 @@
+{
+    "name": "anthony/portfolio",
+    "description": "Plugin WordPress pour le projet portfolio",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "portfolio\\": "."
+        }
+    },
+    "authors": [
+        {
+            "name": "anthony",
+            "email": "a.ouzhene@gmail.com"
+        }
+    ],
+    "require": {}
+}

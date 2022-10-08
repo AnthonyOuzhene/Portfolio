@@ -10,5 +10,6 @@ wp-config.php
 !/wp-content/plugins
 
 !/wp-content/plugins/twentyseventeen
+!/wp-content/plugins/portfolio
 
 install.md
