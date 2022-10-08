@@ -7,6 +7,7 @@
 
 <div class="postList">
     <PostExcerpt
+    @click="onPostClick(currentPost.id)"
     v-for="currentPost in postList"
     :key="currentPost.id"
     :postData="currentPost"
@@ -44,6 +45,15 @@ export default {
                 console.error(error);
             })
         },
+    onPostClick(postId) {
+        // Au click sur le post, on redirige vers la route du single Post en passant par "postId"
+        this.$router.push({
+                name: "post",
+                params: {
+                    postId: postId,
+                },
+            });
+    },
     },
     mounted() {
         this.loadPosts();

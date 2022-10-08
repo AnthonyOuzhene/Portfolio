@@ -10,10 +10,13 @@
 
             <div class="category">
                 <ul>
-                    <li>Tech</li>
-                    <li>Work</li>
-                    <li>Front</li>
-                    <li>Back</li>
+                    <li
+                    v-for="category in postData._embedded['wp:term'][0]"
+                    :key="category.id">
+
+                    {{category.name}}
+
+                    </li>
                 </ul>
             </div>
 

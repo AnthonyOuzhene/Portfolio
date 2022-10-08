@@ -9,8 +9,3 @@
  `yarn start`
 ## Run parcel without cache
 `yarn parcel index.html --no-cache`
-
-
-A FAIRE  :
-
-- une service avec code JS du burger menu

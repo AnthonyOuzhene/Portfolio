@@ -20,7 +20,7 @@ const routes = [
     { path: '/portfolio', component: PortfolioView, name: "portfolio" },
     { path: '/seo', component: SeoView, name: "seo" },
     { path: '/blog', component: BlogView, name: "blog" },
-    { path: '/post/:postId', component: PostSingleView, name: "post" },
+    { path: '/blog/:postId', component: PostSingleView, name: "post" },
     { path: '/contact', component: ContactView, name: "contact" },
     { path: '/:pathMatch(.*)*', component: NotFoundView, name: "error"},
 ]
