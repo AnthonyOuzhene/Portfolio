@@ -57,7 +57,7 @@ class Taxonomy
             $currentRole = get_role($roleSlug);
 
             // pour chaque capability custom dans ce CPT, on la retire du role courant
-            foreach ($capsArray as $cap => $grant) {
+            foreach ($capsArray as $cap) {
                 // on peut associer une cap à un role avec WP_Role::add_cap()
                 $currentRole->remove_cap($cap);
             }
