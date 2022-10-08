@@ -13,4 +13,4 @@ require __DIR__ . '/vendor/autoload.php';
 const PORTFOLIO_PLUGIN_FILE = __FILE__;
 
 // on démarre le plugin
-plugin::run();
+Plugin::run();

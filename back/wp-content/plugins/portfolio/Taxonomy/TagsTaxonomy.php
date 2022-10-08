@@ -8,7 +8,7 @@ class TagsTaxonomy extends Taxonomy {
 
     const TAXONOMY_KEY = 'tags';
     const TAXONOMY_NAME = 'Tags';
-    const POST_TYPE_KEY = NewsPostType::POST_TYPE_LABEL;
+    const POST_TYPE_KEY = NewsPostType::POST_TYPE_KEY;
     const CAPABILITIES =  [
         'manage_terms' => 'manage_tags',
         'edit_terms' => 'edit_tags',
