@@ -19,7 +19,8 @@ class Taxonomy
                 'labels' => ['name' =>  static::TAXONOMY_NAME],
                 'show_ui' => true,
                 'capabilities' => static::CAPABILITIES,
-                'show_in_rest' => true
+                'show_in_rest' => true,
+                'rest_base' => 'tag'
             ],
         );
     }
