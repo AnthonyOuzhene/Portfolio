@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { baseUrl } from './apiClientService';
 
-const endpoint = '/wp/v2/posts';
+const endpoint = '/wp/v2/news';
 
 export default {
     

@@ -2,29 +2,30 @@
 
     <article class="article">
         <a href="#">
-            <img class="fit-picture">
+            <img class="fit-picture"
+            :style="{ backgroundImage: 'url(' + getNewsThumbnail() + ')' }"
+            alt="">
 
             <div class="title">
                 <h1>{{ postData.title.rendered }}</h1>
             </div>
 
             <div class="category">
-                <ul>
+                            <ul>
                     <li
-                    v-for="category in postData._embedded['wp:term'][0]"
-                    :key="category.id">
+                    v-for="tag in postData._embedded['wp:term'][0]"
+                    :key="tag.id">
 
-                    {{category.name}}
+                    {{tag.name}}
 
                     </li>
                 </ul>
             </div>
 
             <p class="content">
-                {{ postData.excerpt.rendered}}
+                {{ postData.excerpt}}
             </p>
 
-            <!-- <button class="btn">Voir plus<i class="fa fa-arrow-right"></i></button> -->
         </a>
     </article>
 
@@ -42,5 +43,18 @@ export default {
     },
 
     props: ['postData'],
+
+    methods: {
+      getNewsThumbnail() {
+      // si on n'a pas de thumbnail
+      // console.log(this.postData);
+      if (!this.postData.thumbnail) {
+        return "https://picsum.photos/400/200";
+      } else {
+        return this.postData.thumbnail;
+      }
+    },
+    },
+
 }
 </script>
