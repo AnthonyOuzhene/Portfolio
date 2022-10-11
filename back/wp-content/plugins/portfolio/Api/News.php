@@ -18,6 +18,16 @@ class News
         add_filter("rest_prepare_{$postType}", [self::class, "onPrepare"]);
     }
 
+    // static public function getDateInFrench($date) {
+
+    //     $timestamp = srttotime($date);
+
+    //     // on set le locale
+    //     setlocale(LC_TIME, 'fr_FR.utf8', 'fra');
+
+    //     return date('%d %B %G', $timestamp);
+    // }
+
     /**
      * filters the WordPress Rest Api response for the Newsresource
      *
@@ -35,6 +45,8 @@ class News
 
         // on ajoute l'url du thumbnail => image mise en avant, dans un format réduit
         $response->data['thumbnail'] = get_the_post_thumbnail_url();
+
+       $response->data['date'] = date('d F Y');
 
         // on est dans un filter, on doit donc retourner une valeur
         return $response;

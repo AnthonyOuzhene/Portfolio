@@ -151,11 +151,12 @@
           
                   <h1>Boogi'Ink <br> Lady Piercing</h1>
           
-                  <h2>Symfony - Vue.js</h2>
+                  <h2>Symfony - React</h2>
                 </header>
           
                 <div class="profile-bio">
-                  <p>Site vitrine moderne d'un salon de tatouage et piercing</p>
+                  <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank">Visiter le site</a>
+                  <p>Site moderne d'un salon de tatouage et de piercing</p>
                 </div>
               </aside>
 

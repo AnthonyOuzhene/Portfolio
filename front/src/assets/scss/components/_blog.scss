@@ -16,8 +16,8 @@
   .postList {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 5em 2em;
-    grid-gap: 3em;
+    margin: 5em 8em 2em;
+    grid-gap: 5em;
 
     @include large {
       grid-template-columns: 1fr 1fr;
@@ -47,7 +47,7 @@
     position: relative;
   
     .fit-picture {
-      border-radius: 20px;
+      border-radius: 20px 20px 0 0;
       height: 250px;
       width: 100%;
       background-size: cover;
