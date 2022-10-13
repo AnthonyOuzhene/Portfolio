@@ -124,8 +124,8 @@
                             <ul>
                 <li class="input">Projet responsive en full Symfony => moteur de template Twig</li>
                 <li class="input">Service pour récupérer API des films</li>
-                <li class="input">Fixtures pour alimenter la Base de données</li>
-                <li class="input">Backoffice disponible à la connexion admin</li>
+                <li class="input">Fixtures pour alimenter la base de données</li>
+                <li class="input">Backoffice templating Twig disponible à la connexion admin</li>
                 <li class="input">Access Control List selon les rôles attribués</li>
                 <li class="input">Gestion de l'ajout des favoris</li>
               </ul>
