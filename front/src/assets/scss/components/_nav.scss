@@ -152,6 +152,7 @@ li{
     width:100vw;    
     transform: translateX(0);
     margin-top: 1em;
+    height: auto;    
   } 
   .navbar__link {    
     transform: translateX(101%);
@@ -252,7 +253,6 @@ li{
   }
   .navbar__link:hover > a::after {
     width:100%;
-    
   }
 }
 

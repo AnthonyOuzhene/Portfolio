@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 900px;
+  height: 800px;
   text-align: center;
 
   .myself {
@@ -13,8 +13,22 @@
     box-sizing: border-box;
     box-shadow: white 1px 5px 10px;
     background-color: rgba(17, 8, 51, 0.3);
-    margin: 8em 15em 15em;
+    //margin: 8em 15em 15em;
     border-radius: 15px;
+    padding-right: 5em;
+    padding-left: 5em;
+  }
+
+  .presentation {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-top: 7.5em;
+
+    @include small-only {
+      margin-top: 2em;
+    }
   }
 
   .name {
