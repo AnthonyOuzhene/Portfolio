@@ -145,11 +145,11 @@
             </div>
             </div>
 
-              <aside class="profile-card">
+              <aside class="profile-card" id="boogink_card">
                 <header>
                     <img  id="btnPopup" class="btnPopup boogink" src="../assets/images/Boog'ink.jpg" />
           
-                  <h1>Boogi'Ink <br> Lady Piercing</h1>
+                  <h1>Boogi'Ink Lady Piercing</h1>
           
                   <h2>Symfony - React</h2>
                 </header>
