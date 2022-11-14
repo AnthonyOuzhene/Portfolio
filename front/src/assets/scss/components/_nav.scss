@@ -249,11 +249,10 @@ li{
     width:0;
     height:1px;
     background:var(--navbar-color);
-    transition:width .4s;
+    transition: width .7s;
   }
   .navbar__link:hover > a::after {
-    width:100%;
-    
+    width: 100%;
   }
 }
 
