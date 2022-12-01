@@ -1,4 +1,4 @@
-# Bricol'Help 
+# Portfolio 
 
 ## For launching the build by parcel enter the code in a new terminal , after changing the directory
 `cd Integration `
@@ -8,4 +8,4 @@
 `cd src `.
  `yarn start`
 ## Run parcel without cache
-`yarn parcel index.html --no-cache`
+ `yarn start` => `yarn parcel index.html --no-cache`
