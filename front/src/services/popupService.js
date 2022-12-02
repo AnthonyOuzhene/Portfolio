@@ -1,13 +1,15 @@
+import axios from 'axios';
+
 export default {
 
     init() {
-
+        
         const btnPopup = document.querySelectorAll('#btnPopup');
         for (const currentPopup of btnPopup) {
             // console.log(currentPopup.classList[1])
             currentPopup.addEventListener('click', () => {
                 popup.openModal(currentPopup.classList[1])
-            });
+            })
         }
 
         const btnClose = document.querySelectorAll('#btnClose');
@@ -37,7 +39,7 @@ export default {
 
 }
 
-//document.addEventListener('DOMContentLoaded', popup.init);
+//window.addEventListener('DOMContentLoaded', popup.init);
 
 
 

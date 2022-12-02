@@ -14,6 +14,7 @@
       <aside class="profile-card">
         <header>
           <img
+            onClick="openPopup"
             id="btnPopup"
             class="btnPopup breakfast"
             src="../assets/images/breakfast.png"
@@ -25,10 +26,10 @@
         </header>
 
         <div class="profile-bio">
-          <p>
-            Site de livraison de petits déjeuners à domicile ou en Click &
-            Collect.
-          </p>
+          <a href="https://youtu.be/yBA6xYkmB5s?t=3256" target="blank"
+            >Présentation du projet</a
+          >
+          <p>Site de livraison de petits-déjeuners à domicile.</p>
         </div>
       </aside>
 
@@ -39,6 +40,9 @@
               >&times;</span
             >
           </h2>
+          <a href="https://youtu.be/yBA6xYkmB5s?t=3256" target="blank"
+            >Présentation du projet</a
+          >
 
           <ul>
             <li class="input">Intégration HTML / CSS</li>
@@ -87,6 +91,9 @@
         </header>
 
         <div class="profile-bio">
+          <a href="https://youtu.be/api6Qm4WWSM?t=2005" target="blank"
+            >Présentation du projet</a
+          >
           <p>Site communautaire, d'entraide et de partage sur le bricolage.</p>
         </div>
       </aside>
@@ -98,6 +105,9 @@
               >&times;</span
             >
           </h2>
+          <a href="https://youtu.be/api6Qm4WWSM?t=2005" target="blank"
+            >Présentation du projet</a
+          >
 
           <ul>
             <li class="input">Integration HTML / CSS / SASS</li>
@@ -222,7 +232,7 @@
 
         <div class="profile-bio">
           <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank"
-            >Visiter le site</a
+            >Site en construction</a
           >
           <p>Site moderne d'un salon de tatouage et de piercing</p>
         </div>
@@ -235,7 +245,7 @@
               >&times;</span
             >
           </h2>
-          <a href="#" target="blank">Visiter le site</a>
+          <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank">Site en construction</a>
           <p>Descriptif à venir</p>
         </div>
       </div>
@@ -278,15 +288,17 @@ import popupService from "../services/popupService";
 
 export default {
   data() {
-    return {};
+    return {
+      //openPopup: false,
+    };
   },
   methods: {
-    loadPopup() {
+    openPopup() {
       popupService.init();
     },
   },
   mounted() {
-    this.loadPopup();
+    this.openPopup();
   },
 };
 </script>
