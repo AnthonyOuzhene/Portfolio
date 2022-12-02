@@ -464,6 +464,7 @@ aside:hover ul li:nth-child(3) {
 .popup > h2 {
   text-align: center;
   border-bottom: solid #252544 1px;
+  padding-bottom: 0.5rem;
 }
 
 .btnClose {
@@ -535,6 +536,17 @@ a {
   margin-top: 0.5em;
 }
 
+a:hover {
+  scale: 1.1;
+  transition: 0.5s;
+  letter-spacing: 0.1em;
+}
+
+.popup > a {
+  padding: 0.5em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
 
 #boogink_card:hover {
   height: 475px;

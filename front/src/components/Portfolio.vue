@@ -258,7 +258,7 @@
             src="../assets/images/wrestling.jpg"
           />
 
-          <h1>Soon</h1>
+          <h1>Sport of kings</h1>
 
           <h2>Still to come</h2>
         </header>
@@ -274,7 +274,7 @@
       <div id="overlay" class="overlay popupkingsport">
         <div id="popup" class="popup">
           <h2>
-            Kings' Sport<span id="btnClose" class="btnClose">&times;</span>
+            Sport of kings<span id="btnClose" class="btnClose">&times;</span>
           </h2>
           <p>Infos à venir</p>
         </div>
