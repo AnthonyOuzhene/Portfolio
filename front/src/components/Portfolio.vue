@@ -170,7 +170,7 @@
             target="blank"
             >Visiter le site</a
           >
-          <p>Plateforme fictive de séries TV et films et de pop-corn</p>
+          <p>Plateforme fictive de séries TV et films et de pop-corn.</p>
         </div>
       </aside>
 
@@ -234,7 +234,7 @@
           <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank"
             >Site en construction</a
           >
-          <p>Site moderne d'un salon de tatouage et de piercing</p>
+          <p>Site moderne d'un salon de tatouage et de piercing.</p>
         </div>
       </aside>
 
@@ -245,38 +245,43 @@
               >&times;</span
             >
           </h2>
-          <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank">Site en construction</a>
+          <a href="http://www.boogiink-tattoo-lady-piercing.com/" target="blank"
+            >Site en construction</a
+          >
           <p>Descriptif à venir</p>
         </div>
       </div>
 
-      <aside class="profile-card">
+      <aside class="profile-card" id="doudous_card">
         <header>
           <img
             id="btnPopup"
-            class="btnPopup kingsport"
-            src="../assets/images/wrestling.jpg"
+            class="btnPopup doudoustoutdoux"
+            src="../assets/images/doudous-tout-doux.jpg"
           />
 
-          <h1>Sport of kings</h1>
+          <h1>Les doudous tout doux</h1>
 
-          <h2>Still to come</h2>
+          <h2>Full Symfony</h2>
         </header>
 
         <div class="profile-bio">
+          <a href="#" target="blank">Site en construction</a>
           <p>
-            Site visant à gérer et développer son propre roster de catch
-            américain
+            Site de vente d'articles de couture écologiques et réutilisables.
           </p>
         </div>
       </aside>
 
-      <div id="overlay" class="overlay popupkingsport">
+      <div id="overlay" class="overlay popupdoudoustoutdoux">
         <div id="popup" class="popup">
           <h2>
-            Sport of kings<span id="btnClose" class="btnClose">&times;</span>
+            Les doudous tout doux<span id="btnClose" class="btnClose"
+              >&times;</span
+            >
           </h2>
-          <p>Infos à venir</p>
+          <a href="" target="blank">Site en construction</a>
+          <p>Descriptif à venir</p>
         </div>
       </div>
     </section>

@@ -11,13 +11,14 @@
                         <li class="item">HTML</li>
                         <li class="item">CSS</li>
                         <li class="item">SASS</li>
-                        <li class="item">JavaScript</li>
                         <li class="item">Bootstrap</li>
+                        <li class="item">JavaScript</li>
                         <li class="item">PHP</li>
                         <li class="item">MySQL</li>
                         <li class="item">Symfony</li>
                         <li class="item">WordPress</li>
                         <li class="item">Vue.js</li>
+                        <li class="item">React</li>
                         <li class="item">REST API</li>
                     </ul>
                     
@@ -26,12 +27,12 @@
                         Savoir-être
                     </h2>
                     <ul class="soft">
-                        <li class="item">Rigoureux</li>
-                        <li class="item">Autonome</li>
-                        <li class="item">Organisé</li>
-                        <li class="item">Travail d'équipe</li>
                         <li class="item">Motivé</li>
+                        <li class="item">Travail d'équipe</li>
                         <li class="item">Communication</li>
+                        <li class="item">Rigoureux</li>
+                        <li class="item">Organisé</li>
+                        <li class="item">Autonome</li>
 
 
                     </ul>

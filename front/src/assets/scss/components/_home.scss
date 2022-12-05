@@ -5,7 +5,7 @@
     & .profile_pic {
         float: left;
         width: 20%;
-        margin: 5em 1em 2em 8em;
+        margin: 8em 1em 2em 8em;
         border: solid black 1px;
         border-radius: 50%;
 
@@ -46,6 +46,10 @@
         @include large {
             margin-top: 0;
             text-align: center;
+            }
+
+            li {
+                text-shadow: none;
             }
     }
 
@@ -89,7 +93,9 @@
         width: 70%;
         font-style: italic;
         text-align: justify;
-
+        line-height: 1.5em;
+        font-weight: 700;
+        margin-top: 1em;
     }
 
     button {
