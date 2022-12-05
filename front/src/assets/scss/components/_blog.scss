@@ -15,16 +15,13 @@
 
   .postList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     margin: 5em 8em 2em;
     grid-gap: 5em;
 
     @include large {
-      grid-template-columns: 1fr 1fr;
-  }
-  @include small-only{
       grid-template-columns: 1fr;
-  }
+    }
   }
 
   a {
@@ -43,9 +40,10 @@
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 1px 20px $textColor;
-    background: rgb(228, 228, 228);;
+    background: rgb(228, 228, 228);
+    ;
     position: relative;
-  
+
     .fit-picture {
       border-radius: 20px 20px 0 0;
       height: 250px;
@@ -53,7 +51,7 @@
       background-size: cover;
       background-repeat: no-repeat;
     }
-    
+
     // .btn {
     //   position: absolute;
     //   bottom: -20px;
@@ -81,35 +79,37 @@
   ul {
     display: flex;
     justify-content: center;
-    margin-bottom : 3em;
+    margin-bottom: 3em;
   }
-  ul >li {
-      cursor: pointer; 
-      width: fit-content;
-      font-size: 16px;
-      margin-right: 1em;
-      padding: 0.5em;
-      border-radius: 15px;
-      box-shadow: 0 0 10px $switchThemeColor;
-      font-family: "Raleway Light";
-      color: white;
-      background: $button;
-      text-shadow: 0px 1px 16px #031421;
-    }
+
+  ul>li {
+    cursor: pointer;
+    width: fit-content;
+    font-size: 16px;
+    margin-right: 1em;
+    padding: 0.5em;
+    border-radius: 15px;
+    box-shadow: 0 0 10px $switchThemeColor;
+    font-family: "Raleway Light";
+    color: white;
+    background: $button;
+    text-shadow: 0px 1px 16px #031421;
+  }
 
   .title {
     text-align: center;
-    margin-bottom : 2em;
+    margin-bottom: 2em;
 
     h1 {
       color: $textColor;
       font-weight: bolder;
       // padding-bottom: 10px;
       font-size: 16px;
-      text-shadow: 0px 1px 16px #031421;    
+      text-shadow: 0px 1px 16px #031421;
     }
-    
+
   }
+
   .content {
     font-size: 18px;
     line-height: 1.2;
