@@ -5,7 +5,7 @@
             <span class="z-index">Rédaction web</span>
 
             <p class="introduction">
-                Veuillez trouver quelques articles de blog et fiches descriptives rédigés et optimisés pour le référencement naturel des moteurs de recherche :
+                Veuillez trouver quelques articles de blog et fiches descriptives rédigés et optimisés pour le référencement naturel de Google :
             </p>
 
             <section id="grid">
