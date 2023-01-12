@@ -1,6 +1,6 @@
 {
     "require": {
-        "johnpbloch/wordpress": "^5.9",
+        "johnpbloch/wordpress": "6.1",
         "wpackagist-plugin/wordpress-seo": "^18.6",
         "wpackagist-plugin/query-monitor": "^3.9",
         "wpackagist-plugin/classic-editor": "^1.6",
@@ -10,12 +10,14 @@
         "wpackagist-plugin/tinymce-advanced": "^5.6",
         "wpackagist-plugin/jetpack": "^11.4",
         "wpackagist-plugin/editor-full-width": "^1.0",
-        "wpackagist-plugin/gutenberg": "^14.2"
+        "wpackagist-plugin/gutenberg": "^14.2",
+        "wpackagist-plugin/duplicator": "^1.5"
     },
     "config": {
         "allow-plugins": {
             "johnpbloch/wordpress-core-installer": true,
-            "composer/installers": true
+            "composer/installers": true,
+            "pixelfear/composer-dist-plugin": true
         }
     },
     "scripts": {
