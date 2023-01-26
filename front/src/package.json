@@ -1,4 +1,5 @@
 {
+  "source": "index.html",
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
@@ -24,7 +25,9 @@
     "@parcel/transformer-sass": "^2.6.0",
     "@parcel/transformer-vue": "^2.6.0",
     "buffer": "^6.0.3",
+    "postcss": "^8.4.21",
     "process": "^0.11.10",
+    "stylehacks": "^5.1.1",
     "worker-loader": "^3.0.8"
   }
 }

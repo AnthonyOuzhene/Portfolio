@@ -84,7 +84,7 @@ export default {
     mounted() {
         postService.getSinglePost(this.$route.params.postId)
         .then((response) => {
-            console.log(response);
+            //console.log(response);
             this.postData = response.data;
         });
     }

@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost/Portfolio/back/index.php/wp-json';
+export const baseUrl = 'https:/wp-admin.anthonyouzhene.com/index.php/wp-json';
