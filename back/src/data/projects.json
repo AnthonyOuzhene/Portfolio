@@ -1,0 +1,96 @@
+[
+  {
+    "slug": "break-fast",
+    "title": "Break Fast",
+    "tagline": "Livraison de petits-déjeuners à domicile",
+    "summary": "Plateforme qui met en relation clients et boulangeries de proximité pour se faire livrer son petit-déjeuner.",
+    "context": "Projet de fin de formation réalisé en équipe, en méthode agile.",
+    "stack": ["Symfony", "React", "MySQL", "JWT"],
+    "accent": "#ff8a3d",
+    "status": "Terminé",
+    "cover": "/images/projects/breakfast-cover.png",
+    "features": [
+      "Intégration HTML / CSS responsive et optimisée SEO",
+      "Base de données MySQL générée avec les migrations Symfony",
+      "API REST avec ACL et hiérarchie des rôles",
+      "Authentification par token JWT",
+      "Front React connecté à l'API via axios",
+      "Géolocalisation des boulangeries via l'API Google"
+    ],
+    "links": [
+      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/yBA6xYkmB5s?t=3256" }
+    ],
+    "gallery": [
+      { "src": "/images/projects/breakfast-bakeries.png", "caption": "Liste des boulangeries trouvées grâce à l'API de localisation Google." },
+      { "src": "/images/projects/breakfast-basket.png", "caption": "Validation des articles du panier." },
+      { "src": "/images/projects/breakfast-admin.png", "caption": "Back-office réalisé avec Twig." }
+    ]
+  },
+  {
+    "slug": "bricol-help",
+    "title": "Bricol'Help",
+    "tagline": "Communauté d'entraide autour du bricolage",
+    "summary": "Site communautaire de partage de tutoriels de bricolage, avec espace membre et commentaires.",
+    "context": "Projet réalisé en équipe, en méthode agile.",
+    "stack": ["WordPress", "Vue.js", "Sass", "JWT"],
+    "accent": "#3dd6a3",
+    "status": "Terminé",
+    "cover": "/images/projects/bricolhelp-cover.png",
+    "features": [
+      "Intégration HTML / CSS / Sass responsive",
+      "Back-office WordPress avec plugin sur mesure (CPT, taxonomies, capabilities)",
+      "Front Vue.js avec une couche de services pour consommer l'API",
+      "Authentification par token JWT",
+      "Système de commentaires pour les membres connectés"
+    ],
+    "links": [
+      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/api6Qm4WWSM?t=2005" }
+    ],
+    "gallery": [
+      { "src": "/images/projects/bricolhelp-home.png", "caption": "Accueil avec les catégories de tutoriels." },
+      { "src": "/images/projects/bricolhelp-tutorial.png", "caption": "Un tutoriel, commentable une fois connecté." },
+      { "src": "/images/projects/bricolhelp-admin.png", "caption": "Administration WordPress : CPT, taxonomies et rôles personnalisés." }
+    ]
+  },
+  {
+    "slug": "oflix",
+    "title": "O'flix",
+    "tagline": "Plateforme de films et séries",
+    "summary": "Catalogue fictif de films et séries avec favoris, espace d'administration et gestion des rôles.",
+    "context": "Projet de formation en full Symfony.",
+    "stack": ["Symfony", "Twig", "MySQL", "Bootstrap"],
+    "accent": "#ff4d6d",
+    "status": "Terminé",
+    "cover": "/images/projects/oflix-cover.png",
+    "features": [
+      "Application responsive en full Symfony avec Twig",
+      "Service de récupération de données depuis une API de films",
+      "Fixtures pour alimenter la base de données",
+      "Back-office accessible aux administrateurs",
+      "Access Control List selon les rôles",
+      "Gestion des favoris avec messages flash"
+    ],
+    "links": [],
+    "gallery": [
+      { "src": "/images/projects/oflix-details.png", "caption": "Fiche d'une série avec ajout aux favoris." },
+      { "src": "/images/projects/oflix-favorites.png", "caption": "Onglet « Ma liste » et message flash." },
+      { "src": "/images/projects/oflix-admin.png", "caption": "Back-office Twig + Bootstrap." }
+    ]
+  },
+  {
+    "slug": "boogiink",
+    "title": "Boogi'Ink",
+    "tagline": "Salon de tatouage & piercing",
+    "summary": "Site vitrine moderne pour un salon de tatouage et de piercing.",
+    "context": "Projet client.",
+    "stack": ["Symfony", "React"],
+    "accent": "#b388ff",
+    "status": "En cours",
+    "cover": "/images/projects/boogink-cover.jpg",
+    "features": [],
+    "links": [
+      { "label": "Visiter le site", "url": "http://www.boogiink-tattoo-lady-piercing.com/" }
+    ],
+    "gallery": []
+  }
+]

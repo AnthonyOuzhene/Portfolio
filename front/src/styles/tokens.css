@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Design tokens: colours (dark + light themes), fonts, radii, spacing.
+   ========================================================================== */
+
+/* ---------- Dark theme (default) ---------- */
+:root {
+  --bg: #0e0b16;
+  --bg-elev: #16121f;
+  --surface: rgb(255 255 255 / 0.035);
+  --surface-hover: rgb(255 255 255 / 0.06);
+  --border: rgb(255 255 255 / 0.08);
+  --border-strong: rgb(255 255 255 / 0.16);
+  --text: #f3f3f6;
+  --muted: #9b9bac;
+  --faint: #5d5d6e;
+
+  --accent: #ff4d5a;
+  --accent-2: #8b5cff;
+  --accent-3: #3dd6c6;
+  --gradient: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 55%, var(--accent-3) 100%);
+
+  --success: #3dd68c;
+  --danger: #ff6b6b;
+
+  /* Translucent panels (header, floating bar, badges) and form surfaces */
+  --glass: rgb(14 11 22 / 0.72);
+  --glass-soft: rgb(14 11 22 / 0.4);
+  --panel: rgb(22 18 31 / 0.8);
+  --field: rgb(255 255 255 / 0.03);
+  --field-focus: rgb(255 255 255 / 0.05);
+  --shadow: rgb(0 0 0 / 0.55);
+
+  /* Decorative glows */
+  --halo: rgb(139 92 255 / 0.16);
+  --hero-glow-opacity: 0.55;
+  --hero-glow-blend: screen;
+  --accent-ink: 0%; /* how much project accents are darkened for small text */
+  --stack-dim: 0.2; /* darkening of the cards behind the top one in the projects deck */
+
+  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+
+  --container: 1200px;
+  --gutter: clamp(16px, 4vw, 40px);
+  --section-space: clamp(88px, 12vw, 160px);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+/* ---------- Light theme (toggled from the header, remembered per visitor) ---------- */
+:root[data-theme='light'] {
+  --bg: #f7f5fb;
+  --bg-elev: #ffffff;
+  --surface: rgb(40 20 80 / 0.03);
+  --surface-hover: rgb(40 20 80 / 0.06);
+  --border: rgb(40 20 80 / 0.1);
+  --border-strong: rgb(40 20 80 / 0.2);
+  --text: #16121f;
+  --muted: #5c566b;
+  --faint: #8f89a0;
+
+  --success: #1f9d63;
+  --danger: #e0404b;
+
+  --glass: rgb(247 245 251 / 0.78);
+  --glass-soft: rgb(255 255 255 / 0.6);
+  --panel: rgb(255 255 255 / 0.85);
+  --field: rgb(40 20 80 / 0.03);
+  --field-focus: #ffffff;
+  --shadow: rgb(40 20 80 / 0.16);
+
+  --halo: rgb(139 92 255 / 0.1);
+  --hero-glow-opacity: 0.35;
+  --hero-glow-blend: normal;
+  --accent-ink: 35%;
+  --stack-dim: 0.04;
+
+  color-scheme: light;
+}

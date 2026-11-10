@@ -1,0 +1,50 @@
+{
+  "name": "Anthony Ouzhene",
+  "role": "Développeur web passionné",
+  "location": "Normandie, France",
+  "email": "a.ouzhene@gmail.com",
+  "availability": "Ouvert aux opportunités",
+  "rotatingWords": [
+    { "text": "modernes", "emoji": "✨" },
+    { "text": "responsives", "emoji": "📱" },
+    { "text": "UX friendly", "emoji": "🫶" },
+    { "text": "sur mesure", "emoji": "✂️" },
+    { "text": "robustes", "emoji": "🛡️" },
+    { "text": "SEO friendly", "emoji": "🔎" },
+    { "text": "GEO ready", "emoji": "🤖" }
+  ],
+  "intro": "Je conçois des applications web soignées, du back-end à l'interface, avec un faible pour les API bien pensées et le code qui dure.",
+  "about": [
+    "Développeur web full-stack avec un penchant affirmé pour le back-end, j'aime autant concevoir une API propre que peaufiner une interface pensée mobile first.",
+    "Avant le code, mon parcours m'a fait traverser la logistique, l'industrie et la rédaction web SEO. J'en garde le sens de l'organisation, la rigueur et l'envie d'écrire pour de vrais utilisateurs.",
+    "Ici, vous trouverez une sélection de projets, mes compétences et quelques contenus rédigés pour le référencement naturel."
+  ],
+  "marquee": [
+    "Code propre",
+    "Mobile first",
+    "API sur mesure",
+    "Interfaces soignées",
+    "Performance",
+    "Accessibilité",
+    "SEO",
+    "GEO"
+  ],
+  "cv": "/cv-anthony-ouzhene.pdf",
+  "socials": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/AnthonyOuzhene"
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/anthony-ouzhene/"
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": "https://www.instagram.com/zen_dev_redac/"
+    }
+  ]
+}
