@@ -8,7 +8,7 @@
     "stack": ["Symfony", "React", "MySQL", "JWT"],
     "accent": "#ff8a3d",
     "status": "Terminé",
-    "cover": "/images/projects/breakfast-cover.png",
+    "cover": "/images/projects/breakfast-cover.webp",
     "features": [
       "Intégration HTML / CSS responsive et optimisée SEO",
       "Base de données MySQL générée avec les migrations Symfony",
@@ -21,9 +21,9 @@
       { "label": "Voir la présentation vidéo", "url": "https://youtu.be/yBA6xYkmB5s?t=3256" }
     ],
     "gallery": [
-      { "src": "/images/projects/breakfast-bakeries.png", "caption": "Liste des boulangeries trouvées grâce à l'API de localisation Google." },
-      { "src": "/images/projects/breakfast-basket.png", "caption": "Validation des articles du panier." },
-      { "src": "/images/projects/breakfast-admin.png", "caption": "Back-office réalisé avec Twig." }
+      { "src": "/images/projects/breakfast-bakeries.webp", "caption": "Liste des boulangeries trouvées grâce à l'API de localisation Google." },
+      { "src": "/images/projects/breakfast-basket.webp", "caption": "Validation des articles du panier." },
+      { "src": "/images/projects/breakfast-admin.webp", "caption": "Back-office réalisé avec Twig." }
     ]
   },
   {
@@ -35,7 +35,7 @@
     "stack": ["WordPress", "Vue.js", "Sass", "JWT"],
     "accent": "#3dd6a3",
     "status": "Terminé",
-    "cover": "/images/projects/bricolhelp-cover.png",
+    "cover": "/images/projects/bricolhelp-cover.webp",
     "features": [
       "Intégration HTML / CSS / Sass responsive",
       "Back-office WordPress avec plugin sur mesure (CPT, taxonomies, capabilities)",
@@ -47,9 +47,9 @@
       { "label": "Voir la présentation vidéo", "url": "https://youtu.be/api6Qm4WWSM?t=2005" }
     ],
     "gallery": [
-      { "src": "/images/projects/bricolhelp-home.png", "caption": "Accueil avec les catégories de tutoriels." },
-      { "src": "/images/projects/bricolhelp-tutorial.png", "caption": "Un tutoriel, commentable une fois connecté." },
-      { "src": "/images/projects/bricolhelp-admin.png", "caption": "Administration WordPress : CPT, taxonomies et rôles personnalisés." }
+      { "src": "/images/projects/bricolhelp-home.webp", "caption": "Accueil avec les catégories de tutoriels." },
+      { "src": "/images/projects/bricolhelp-tutorial.webp", "caption": "Un tutoriel, commentable une fois connecté." },
+      { "src": "/images/projects/bricolhelp-admin.webp", "caption": "Administration WordPress : CPT, taxonomies et rôles personnalisés." }
     ]
   },
   {
@@ -61,7 +61,7 @@
     "stack": ["Symfony", "Twig", "MySQL", "Bootstrap"],
     "accent": "#ff4d6d",
     "status": "Terminé",
-    "cover": "/images/projects/oflix-cover.png",
+    "cover": "/images/projects/oflix-cover.webp",
     "features": [
       "Application responsive en full Symfony avec Twig",
       "Service de récupération de données depuis une API de films",
@@ -72,9 +72,9 @@
     ],
     "links": [],
     "gallery": [
-      { "src": "/images/projects/oflix-details.png", "caption": "Fiche d'une série avec ajout aux favoris." },
-      { "src": "/images/projects/oflix-favorites.png", "caption": "Onglet « Ma liste » et message flash." },
-      { "src": "/images/projects/oflix-admin.png", "caption": "Back-office Twig + Bootstrap." }
+      { "src": "/images/projects/oflix-details.webp", "caption": "Fiche d'une série avec ajout aux favoris." },
+      { "src": "/images/projects/oflix-favorites.webp", "caption": "Onglet « Ma liste » et message flash." },
+      { "src": "/images/projects/oflix-admin.webp", "caption": "Back-office Twig + Bootstrap." }
     ]
   },
   {
@@ -86,7 +86,7 @@
     "stack": ["Symfony", "React"],
     "accent": "#b388ff",
     "status": "En cours",
-    "cover": "/images/projects/boogink-cover.jpg",
+    "cover": "/images/projects/boogink-cover.webp",
     "features": [],
     "links": [
       { "label": "Visiter le site", "url": "http://www.boogiink-tattoo-lady-piercing.com/" }

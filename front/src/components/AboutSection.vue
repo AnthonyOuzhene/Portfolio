@@ -11,7 +11,7 @@ defineProps({
     <div class="container about">
       <div v-reveal class="about__portrait">
         <div class="portrait">
-          <img src="/images/avatar.png" alt="Avatar Octocat d'Anthony Ouzhene" width="1000" height="1000" loading="lazy" />
+          <img src="/images/avatar.webp" alt="Avatar Octocat d'Anthony Ouzhene" width="1000" height="1000" loading="lazy" />
         </div>
         <p class="portrait__badge">
           <AppIcon name="pin" />
