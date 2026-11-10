@@ -1,0 +1,23 @@
+[
+  {
+    "id": "24s",
+    "client": "24S",
+    "type": "Fiches produits",
+    "url": "https://www.24s.com/fr-fr/sac-porte-croise-diagramme-largeprada_PRA57PC6",
+    "logo": "/images/writing/24s.jpg"
+  },
+  {
+    "id": "tablodeco",
+    "client": "Tablodeco",
+    "type": "Articles de blog",
+    "url": "https://tablodeco.fr/blogs/blog-idees-de-decoration-avec-des-tableaux/decoration-pour-chambre-ado",
+    "logo": "/images/writing/tablodeco.png"
+  },
+  {
+    "id": "redac-du-web",
+    "client": "La Rédac du Web",
+    "type": "Articles de blog",
+    "url": "https://blog.laredacduweb.fr/comment-faire-decoller-son-blog-2",
+    "logo": "/images/writing/redac-du-web.png"
+  }
+]

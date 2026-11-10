@@ -1,37 +1,42 @@
-// on importe les fonctions de vue router depuis la dépendance vue-router
 import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from './views/HomeView.vue';
 
-// on récupère les composants à utiliser avec notre router
-import HomeView from "./views/HomeView.vue";
-import SkillsView from "./views/SkillsView.vue";
-import PortfolioView from "./views/PortfolioView.vue";
-import SeoView from "./views/SeoView.vue";
-import BlogView from "./views/BlogView.vue";
-import PostSingleView from './views/PostSingleView.vue'
-import ContactView from "./views/ContactView.vue";
-import NotFoundView from "./views/NotFoundView.vue";
+const SITE = 'Anthony Ouzhene';
 
+function waitFor(selector, timeout = 3000) {
+  return new Promise((resolve) => {
+    const start = performance.now();
+    const check = () => {
+      if (document.querySelector(selector)) return resolve(true);
+      if (performance.now() - start > timeout) return resolve(false);
+      requestAnimationFrame(check);
+    };
+    check();
+  });
+}
 
-// on définit des routes. C'est un array qui contient des objets sours la forme {path, component} (on ne choisit pes les noms de propriétés)
-// chaque objet est une correspondance entre un chemin et un composant
 const routes = [
-    { path: '/', component: HomeView, name: "homepage" },
-    { path: '/competences', component: SkillsView, name: "skills" },
-    { path: '/portfolio', component: PortfolioView, name: "portfolio" },
-    { path: '/seo', component: SeoView, name: "seo" },
-    { path: '/blog', component: BlogView, name: "blog" },
-    { path: '/blog/:postId', component: PostSingleView, name: "post" },
-    { path: '/contact', component: ContactView, name: "contact" },
-    { path: '/:pathMatch(.*)*', component: NotFoundView, name: "error"},
-]
+  { path: '/', name: 'home', component: HomeView, meta: { title: `${SITE} · Développeur web passionné` } },
+  { path: '/projets/:slug', name: 'project', component: () => import('./views/ProjectView.vue') },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('./views/NotFoundView.vue'), meta: { title: `Page introuvable · ${SITE}` } },
+];
 
-
-// on instancie VueRouter avec la fonction createRouter
 const router = createRouter({
-    // on utilise le mode d'historique "HTML5" => urls classiques ex. /register
-    history: createWebHistory(process.env.APP_URL),
-    routes, // short for `routes: routes`
+  history: createWebHistory(),
+  routes,
+  async scrollBehavior(to, from, saved) {
+    if (saved) return saved;
+    if (to.hash) {
+      // Sections only exist once the page transition is done and content is loaded.
+      const found = await waitFor(to.hash);
+      return found ? { el: to.hash, top: 80, behavior: from.name === to.name ? 'smooth' : 'instant' } : { top: 0 };
+    }
+    return { top: 0 };
+  },
 });
 
-// on exporte l'instance de VueRouter créée
+router.afterEach((to) => {
+  if (to.meta.title) document.title = to.meta.title;
+});
+
 export default router;
