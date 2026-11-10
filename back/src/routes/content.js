@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { profile, projects, skills, toProjectSummary, writing } from '../data/index.js';
+import { journey, profile, projects, skills, toProjectSummary, writing } from '../data/index.js';
 
 export const contentRouter = Router();
 
@@ -16,6 +16,7 @@ contentRouter.get('/home', (_req, res) => {
 contentRouter.get('/profile', (_req, res) => res.json(profile));
 contentRouter.get('/skills', (_req, res) => res.json(skills));
 contentRouter.get('/writing', (_req, res) => res.json(writing));
+contentRouter.get('/journey', (_req, res) => res.json(journey));
 contentRouter.get('/projects', (_req, res) => res.json(projects.map(toProjectSummary)));
 
 contentRouter.get('/projects/:slug', (req, res) => {

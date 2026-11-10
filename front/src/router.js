@@ -18,6 +18,7 @@ function waitFor(selector, timeout = 3000) {
 const routes = [
   { path: '/', name: 'home', component: HomeView, meta: { title: `${SITE} · Développeur web passionné` } },
   { path: '/projets/:slug', name: 'project', component: () => import('./views/ProjectView.vue') },
+  { path: '/parcours', name: 'journey', component: () => import('./views/JourneyView.vue'), meta: { title: `Parcours · ${SITE}` } },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: () => import('./views/NotFoundView.vue'), meta: { title: `Page introuvable · ${SITE}` } },
 ];
 

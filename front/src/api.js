@@ -19,5 +19,6 @@ async function request(path, options = {}) {
 export const api = {
   home: () => request('/home'),
   project: (slug) => request(`/projects/${encodeURIComponent(slug)}`),
+  journey: () => request('/journey'),
   contact: (payload) => request('/contact', { method: 'POST', body: JSON.stringify(payload) }),
 };

@@ -4,12 +4,15 @@ import { useRoute } from 'vue-router';
 import AppIcon from './AppIcon.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
+// Home sections are reached by anchor; "Parcours" is its own page.
 const links = [
-  { hash: '#a-propos', label: 'À propos' },
-  { hash: '#competences', label: 'Compétences' },
-  { hash: '#projets', label: 'Projets' },
-  { hash: '#redaction', label: 'Rédaction' },
+  { to: { name: 'home', hash: '#a-propos' }, label: 'À propos' },
+  { to: { name: 'journey' }, label: 'Parcours' },
+  { to: { name: 'home', hash: '#competences' }, label: 'Compétences' },
+  { to: { name: 'home', hash: '#projets' }, label: 'Projets' },
+  { to: { name: 'home', hash: '#redaction' }, label: 'Rédaction' },
 ];
+const mobileLinks = [...links, { to: { name: 'home', hash: '#contact' }, label: 'Contact' }];
 
 const scrolled = ref(false);
 const open = ref(false);
@@ -37,8 +40,8 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
 
       <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
-          <li v-for="link in links" :key="link.hash">
-            <RouterLink :to="{ name: 'home', hash: link.hash }" class="nav__link">{{ link.label }}</RouterLink>
+          <li v-for="link in links" :key="link.label">
+            <RouterLink :to="link.to" class="nav__link">{{ link.label }}</RouterLink>
           </li>
         </ul>
         <RouterLink :to="{ name: 'home', hash: '#contact' }" class="btn nav__cta">
@@ -63,8 +66,8 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
     <Transition name="menu">
       <nav v-if="open" id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
         <ul>
-          <li v-for="(link, i) in [...links, { hash: '#contact', label: 'Contact' }]" :key="link.hash" :style="{ '--i': i }">
-            <RouterLink :to="{ name: 'home', hash: link.hash }">{{ link.label }}</RouterLink>
+          <li v-for="(link, i) in mobileLinks" :key="link.label" :style="{ '--i': i }">
+            <RouterLink :to="link.to">{{ link.label }}</RouterLink>
           </li>
         </ul>
       </nav>
@@ -153,7 +156,8 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   transition: transform 0.35s var(--ease-out);
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.nav__link.router-link-exact-active {
   color: var(--text);
 }
 
@@ -232,7 +236,8 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   }
 }
 
-@media (min-width: 900px) {
+/* 5 links + CTA + theme toggle need ~1000px; below that the burger menu is used */
+@media (min-width: 1024px) {
   .nav {
     display: flex;
     margin-left: auto; /* nav + theme toggle grouped on the right */

@@ -22,6 +22,13 @@ describe('content API', () => {
     expect(res.body.next.slug).toBeTruthy();
   });
 
+  it('returns the career journey', async () => {
+    const res = await request(makeApp()).get('/api/journey').expect(200);
+    expect(res.body.experiences.length).toBeGreaterThan(0);
+    expect(res.body.experiences[0]).toHaveProperty('role');
+    expect(res.body.education.length).toBeGreaterThan(0);
+  });
+
   it('404s on unknown project and unknown API route', async () => {
     const app = makeApp();
     await request(app).get('/api/projects/nope').expect(404);

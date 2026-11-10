@@ -64,10 +64,10 @@ onBeforeUnmount(() => clearInterval(timer));
             Voir mes projets
             <AppIcon name="arrow-down" />
           </RouterLink>
-          <a :href="profile.cv" class="btn btn--ghost" target="_blank" rel="noopener">
-            <AppIcon name="download" />
-            Mon CV
-          </a>
+          <RouterLink :to="{ name: 'journey' }" class="btn btn--ghost">
+            Mon parcours
+            <AppIcon name="arrow-right" />
+          </RouterLink>
         </div>
       </div>
     </div>

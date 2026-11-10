@@ -21,7 +21,7 @@ const { data, error, retry } = useSiteData();
     <ProjectsSection :projects="data.projects" />
     <WritingSection :writing="data.writing" />
     <ContactSection />
-    <FloatingActions :cv="data.profile.cv" />
+    <FloatingActions />
   </div>
 
   <div v-else-if="error" class="state container">
