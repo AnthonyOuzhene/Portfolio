@@ -1,0 +1,5 @@
+/* Global styles, imported once in main.js.
+   Component-specific styles live in each .vue file (<style scoped>). */
+@import './tokens.css'; /* colours (dark + light themes), fonts, spacing */
+@import './base.css'; /* reset, typography, page background */
+@import './utilities.css'; /* .container, .btn, .tag, .card, scroll reveal… */

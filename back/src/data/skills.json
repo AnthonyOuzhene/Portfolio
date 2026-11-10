@@ -1,0 +1,37 @@
+[
+  {
+    "id": "backend",
+    "title": "Back-end",
+    "description": "API, modélisation de données, sécurité et logique métier.",
+    "items": [
+      "PHP",
+      "Symfony",
+      "Node.js",
+      "Drupal",
+      "WordPress",
+      "MySQL",
+      "API REST",
+      "JWT",
+      "Maintenance serveurs",
+      "Optimisations SEO & GEO"
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": "Front-end",
+    "description": "Interfaces responsives, accessibles et agréables à utiliser.",
+    "items": ["HTML", "CSS", "Sass", "JavaScript", "Vue.js", "React", "Twig", "Bootstrap"]
+  },
+  {
+    "id": "tools",
+    "title": "Outils",
+    "description": "L'environnement du quotidien.",
+    "items": ["Git", "GitHub", "Linux", "Postman", "Vite", "Composer", "npm"]
+  },
+  {
+    "id": "soft",
+    "title": "Savoir-être",
+    "description": "Ce que j'apporte à une équipe.",
+    "items": ["Rigueur", "Autonomie", "Organisation", "Communication", "Esprit d'équipe", "Curiosité"]
+  }
+]

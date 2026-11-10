@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "front",
+    "back"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c magenta,cyan \"npm run dev -w back\" \"npm run dev -w front\"",
+    "build": "npm run build -w front",
+    "start": "NODE_ENV=production npm run start -w back",
+    "test": "npm test -w back"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
