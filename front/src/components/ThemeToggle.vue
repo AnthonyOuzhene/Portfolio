@@ -1,13 +1,18 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useTheme } from '../composables/useTheme.js';
 import AppIcon from './AppIcon.vue';
 
-const { theme, toggle } = useTheme();
+const { theme, toggle, syncFromDocument } = useTheme();
 const isLight = computed(() => theme.value === 'light');
+
+// The pre-rendered HTML doesn't know the visitor's theme: sync once in the browser.
+onMounted(syncFromDocument);
 </script>
 
 <template>
+  <!-- Both icons are rendered; CSS shows the right one from <html data-theme>,
+       so a light-mode visitor never sees the wrong icon flash on load. -->
   <button
     type="button"
     class="theme-toggle"
@@ -15,9 +20,8 @@ const isLight = computed(() => theme.value === 'light');
     :title="isLight ? 'Mode sombre' : 'Mode clair'"
     @click="toggle"
   >
-    <Transition name="spin" mode="out-in">
-      <AppIcon :key="theme" :name="isLight ? 'moon' : 'sun'" />
-    </Transition>
+    <span class="theme-toggle__icon theme-toggle__icon--sun"><AppIcon name="sun" /></span>
+    <span class="theme-toggle__icon theme-toggle__icon--moon"><AppIcon name="moon" /></span>
   </button>
 </template>
 
@@ -41,20 +45,23 @@ const isLight = computed(() => theme.value === 'light');
   background: var(--surface-hover);
 }
 
-.spin-enter-active,
-.spin-leave-active {
+/* Both icons stacked in the same cell; the inactive one spins out. */
+.theme-toggle__icon {
+  grid-area: 1 / 1;
+  display: grid;
   transition:
     opacity 0.2s,
     transform 0.3s var(--ease-out);
 }
 
-.spin-enter-from {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.6);
-}
-
-.spin-leave-to {
+.theme-toggle__icon--moon,
+:root[data-theme='light'] .theme-toggle__icon--sun {
   opacity: 0;
   transform: rotate(90deg) scale(0.6);
+}
+
+:root[data-theme='light'] .theme-toggle__icon--moon {
+  opacity: 1;
+  transform: none;
 }
 </style>

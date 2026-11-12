@@ -1,30 +1,53 @@
 <script setup>
-import { computed, onBeforeUnmount, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { api } from '../api.js';
-import { useAsync } from '../composables/useAsync.js';
+import { getProject } from '../content.js';
 import AppIcon from '../components/AppIcon.vue';
 import NotFoundView from './NotFoundView.vue';
 
 const route = useRoute();
-const { data: project, error, loading } = useAsync(() => api.project(route.params.slug));
+const project = computed(() => getProject(route.params.slug)); // null for an unknown slug
 
-const notFound = computed(() => error.value?.status === 404);
-
-watch(project, (p) => {
-  if (p) document.title = `${p.title} · Anthony Ouzhene`;
-});
+watch(
+  project,
+  (p) => {
+    if (p && typeof document !== 'undefined') document.title = `${p.title} · Anthony Ouzhene`;
+  },
+  { immediate: true },
+);
 
 // ---------- Lightbox ----------
 const lightbox = ref(null); // index of the open image, or null
+
+// The lightbox is teleported to <body>: it's only created in the browser, because
+// a teleport in the pre-rendered HTML can't be matched back when the app takes over.
+const mounted = ref(false);
+onMounted(() => (mounted.value = true));
 const gallery = computed(() => project.value?.gallery ?? []);
+
+const next = () => (lightbox.value = (lightbox.value + 1) % gallery.value.length);
+const prev = () => (lightbox.value = (lightbox.value - 1 + gallery.value.length) % gallery.value.length);
 
 function onKey(event) {
   if (lightbox.value === null) return;
-  const n = gallery.value.length;
   if (event.key === 'Escape') lightbox.value = null;
-  if (event.key === 'ArrowRight') lightbox.value = (lightbox.value + 1) % n;
-  if (event.key === 'ArrowLeft') lightbox.value = (lightbox.value - 1 + n) % n;
+  if (event.key === 'ArrowRight') next();
+  if (event.key === 'ArrowLeft') prev();
+}
+
+// Swipe left/right on touch screens (50px minimum, mostly horizontal).
+let touchStart = null;
+function onTouchStart(event) {
+  const t = event.changedTouches[0];
+  touchStart = { x: t.clientX, y: t.clientY };
+}
+function onTouchEnd(event) {
+  if (!touchStart || gallery.value.length < 2) return;
+  const t = event.changedTouches[0];
+  const dx = t.clientX - touchStart.x;
+  const dy = t.clientY - touchStart.y;
+  touchStart = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) (dx < 0 ? next : prev)();
 }
 
 watch(lightbox, (value) => {
@@ -40,9 +63,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <NotFoundView v-if="notFound" />
+  <NotFoundView v-if="!project" />
 
-  <article v-else-if="project" class="project-page" :style="{ '--project-accent': project.accent }">
+  <article v-else class="project-page" :style="{ '--project-accent': project.accent }">
     <header class="hero">
       <div class="hero__glow" aria-hidden="true" />
       <div class="container hero__inner">
@@ -82,8 +105,10 @@ onBeforeUnmount(() => {
             class="btn"
             :class="{ 'btn--ghost': i > 0 }"
           >
+            <!-- GitHub links get the GitHub logo; other links an external-link arrow -->
+            <AppIcon v-if="link.url.includes('github.com')" name="github" />
             {{ link.label }}
-            <AppIcon name="arrow-up-right" />
+            <AppIcon v-if="!link.url.includes('github.com')" name="arrow-up-right" />
           </a>
         </div>
       </div>
@@ -133,7 +158,7 @@ onBeforeUnmount(() => {
       </nav>
     </div>
 
-    <Teleport to="body">
+    <Teleport v-if="mounted" to="body">
       <Transition name="lightbox">
         <div
           v-if="lightbox !== null"
@@ -142,10 +167,20 @@ onBeforeUnmount(() => {
           aria-modal="true"
           :aria-label="gallery[lightbox].caption"
           @click.self="lightbox = null"
+          @touchstart.passive="onTouchStart"
+          @touchend="onTouchEnd"
         >
-          <button class="lightbox__close" aria-label="Fermer" autofocus @click="lightbox = null">
+          <button class="lightbox__btn lightbox__close" aria-label="Fermer" autofocus @click="lightbox = null">
             <AppIcon name="close" />
           </button>
+          <template v-if="gallery.length > 1">
+            <button class="lightbox__btn lightbox__nav lightbox__nav--prev" aria-label="Capture précédente" @click="prev">
+              <AppIcon name="arrow-left" />
+            </button>
+            <button class="lightbox__btn lightbox__nav lightbox__nav--next" aria-label="Capture suivante" @click="next">
+              <AppIcon name="arrow-right" />
+            </button>
+          </template>
           <figure class="lightbox__figure">
             <img :src="gallery[lightbox].src" :alt="gallery[lightbox].caption" />
             <figcaption>{{ gallery[lightbox].caption }} · {{ lightbox + 1 }}/{{ gallery.length }}</figcaption>
@@ -154,15 +189,6 @@ onBeforeUnmount(() => {
       </Transition>
     </Teleport>
   </article>
-
-  <div v-else-if="error" class="state container">
-    <h1>Impossible de charger ce projet.</h1>
-    <p>{{ error.message }}</p>
-  </div>
-
-  <div v-else-if="loading" class="state container" aria-busy="true">
-    <span class="loader" />
-  </div>
 </template>
 
 <style scoped>
@@ -170,8 +196,10 @@ onBeforeUnmount(() => {
 .hero {
   position: relative;
   padding: 140px 0 64px;
-  overflow: hidden;
   isolation: isolate;
+  /* clip the glow on the sides only (no horizontal scroll), but let it fade out
+     downwards instead of ending in a hard line under the header */
+  overflow-x: clip;
 }
 
 .hero__glow {
@@ -262,6 +290,11 @@ onBeforeUnmount(() => {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 12px;
+}
+
+/* Same coral glow on hover for every project link (outline buttons have none by default) */
+.hero__links .btn--ghost:hover {
+  box-shadow: 0 12px 40px -12px rgb(255 77 90 / 0.6);
 }
 
 @media (min-width: 760px) {
@@ -425,35 +458,6 @@ onBeforeUnmount(() => {
 .pager__link:hover .pager__title {
   color: color-mix(in srgb, var(--project-accent), var(--text) var(--accent-ink));
 }
-
-/* ---------- States ---------- */
-.state {
-  min-height: 100svh;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 16px;
-  text-align: center;
-}
-
-.state p {
-  color: var(--muted);
-}
-
-.loader {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 </style>
 
 <style>
@@ -467,6 +471,8 @@ onBeforeUnmount(() => {
   padding: 64px 16px 24px;
   background: rgb(5 5 8 / 0.92);
   backdrop-filter: blur(8px);
+  /* always dark, whatever the theme: force light text and controls */
+  color: #f3f3f6;
 }
 
 .lightbox__figure {
@@ -486,21 +492,57 @@ onBeforeUnmount(() => {
 
 .lightbox__figure figcaption {
   text-align: center;
-  color: var(--muted);
+  color: #b4b4c2;
   font-size: 0.92rem;
 }
 
-.lightbox__close {
+.lightbox__btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
   display: grid;
   place-items: center;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--border-strong);
+  border: 1px solid rgb(255 255 255 / 0.2);
+  background: rgb(255 255 255 / 0.06);
+  color: #f3f3f6;
   font-size: 1.2rem;
+  transition: background 0.2s;
+}
+
+.lightbox__btn:hover {
+  background: rgb(255 255 255 / 0.14);
+}
+
+.lightbox__close {
+  top: 16px;
+  right: 16px;
+}
+
+.lightbox__nav {
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.lightbox__nav--prev {
+  left: 16px;
+}
+
+.lightbox__nav--next {
+  right: 16px;
+}
+
+/* On phones the arrows sit at the bottom so they never cover the screenshot. */
+@media (max-width: 760px) {
+  .lightbox {
+    padding-bottom: 92px;
+  }
+
+  .lightbox__nav {
+    top: auto;
+    bottom: 24px;
+    translate: none;
+  }
 }
 
 .lightbox-enter-active,

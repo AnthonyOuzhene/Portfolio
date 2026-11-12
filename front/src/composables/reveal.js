@@ -19,6 +19,11 @@ function getObserver() {
 }
 
 export const vReveal = {
+  // Pre-rendering: output the same class/delay the browser will add, so the
+  // page doesn't change when the app takes over the server-generated HTML.
+  getSSRProps({ value }) {
+    return value ? { class: 'reveal', style: { '--reveal-delay': `${value}ms` } } : { class: 'reveal' };
+  },
   mounted(el, { value }) {
     el.classList.add('reveal');
     if (value) el.style.setProperty('--reveal-delay', `${value}ms`);

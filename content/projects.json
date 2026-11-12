@@ -18,7 +18,8 @@
       "Géolocalisation des boulangeries via l'API Google"
     ],
     "links": [
-      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/yBA6xYkmB5s?t=3256" }
+      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/yBA6xYkmB5s?t=3256" },
+      { "label": "Voir le code sur GitHub", "url": "https://github.com/AnthonyOuzhene/BreakFast" }
     ],
     "gallery": [
       { "src": "/images/projects/breakfast-bakeries.webp", "caption": "Liste des boulangeries trouvées grâce à l'API de localisation Google." },
@@ -44,7 +45,8 @@
       "Système de commentaires pour les membres connectés"
     ],
     "links": [
-      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/api6Qm4WWSM?t=2005" }
+      { "label": "Voir la présentation vidéo", "url": "https://youtu.be/api6Qm4WWSM?t=2005" },
+      { "label": "Voir le code sur GitHub", "url": "https://github.com/AnthonyOuzhene/Bricol-Help" }
     ],
     "gallery": [
       { "src": "/images/projects/bricolhelp-home.webp", "caption": "Accueil avec les catégories de tutoriels." },
@@ -70,7 +72,9 @@
       "Access Control List selon les rôles",
       "Gestion des favoris avec messages flash"
     ],
-    "links": [],
+    "links": [
+      { "label": "Voir le code sur GitHub", "url": "https://github.com/AnthonyOuzhene/oflix" }
+    ],
     "gallery": [
       { "src": "/images/projects/oflix-details.webp", "caption": "Fiche d'une série avec ajout aux favoris." },
       { "src": "/images/projects/oflix-favorites.webp", "caption": "Onglet « Ma liste » et message flash." },

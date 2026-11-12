@@ -2,10 +2,6 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import AppIcon from './AppIcon.vue';
 
-defineProps({
-  cv: { type: String, required: true },
-});
-
 // Visible once the hero buttons have scrolled out of view, hidden again while the
 // projects deck, the contact form or the footer is on screen (so it never covers their controls).
 const heroActionsVisible = ref(true);
@@ -41,10 +37,10 @@ onBeforeUnmount(() => observer?.disconnect());
         Voir mes projets
         <AppIcon name="arrow-down" />
       </RouterLink>
-      <a :href="cv" class="btn btn--ghost floating__btn" target="_blank" rel="noopener">
-        <AppIcon name="download" />
-        Mon CV
-      </a>
+      <RouterLink :to="{ name: 'journey' }" class="btn btn--ghost floating__btn">
+        Mon parcours
+        <AppIcon name="arrow-right" />
+      </RouterLink>
     </div>
   </Transition>
 </template>

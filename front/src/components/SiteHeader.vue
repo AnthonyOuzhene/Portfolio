@@ -1,19 +1,36 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { useScrollSpy } from '../composables/useScrollSpy.js';
 import AppIcon from './AppIcon.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
+// Home sections are reached by anchor; "Parcours" is its own page.
 const links = [
-  { hash: '#a-propos', label: 'À propos' },
-  { hash: '#competences', label: 'Compétences' },
-  { hash: '#projets', label: 'Projets' },
-  { hash: '#redaction', label: 'Rédaction' },
+  { to: { name: 'home', hash: '#a-propos' }, label: 'À propos' },
+  { to: { name: 'journey' }, label: 'Parcours' },
+  { to: { name: 'home', hash: '#competences' }, label: 'Compétences' },
+  { to: { name: 'home', hash: '#projets' }, label: 'Projets' },
+  { to: { name: 'home', hash: '#redaction' }, label: 'Rédaction' },
 ];
+const mobileLinks = [...links, { to: { name: 'home', hash: '#contact' }, label: 'Contact' }];
 
 const scrolled = ref(false);
 const open = ref(false);
 const route = useRoute();
+
+// Active link: on the home page, the section currently on screen (scroll spy);
+// on other pages, the link to that page.
+const { activeId, setActive } = useScrollSpy(['a-propos', 'competences', 'projets', 'redaction', 'contact']);
+
+function isActive(link) {
+  if (link.to.hash) return route.name === 'home' && activeId.value === link.to.hash.slice(1);
+  return route.name === link.to.name;
+}
+
+function onLinkClick(link) {
+  if (link.to.hash) setActive(link.to.hash.slice(1));
+}
 
 const onScroll = () => (scrolled.value = window.scrollY > 24);
 
@@ -30,15 +47,26 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
 <template>
   <header class="header" :class="{ 'is-scrolled': scrolled || open, 'is-open': open }">
     <div class="container header__inner">
-      <RouterLink :to="{ name: 'home' }" class="logo" aria-label="Accueil">
-        <span class="logo__mark">AO</span>
-        <span class="logo__name">Anthony Ouzhene</span>
+      <RouterLink :to="{ name: 'home' }" class="logo" aria-label="Anthony Ouzhene, accueil">
+        <span class="logo__mark" aria-hidden="true">AO</span>
       </RouterLink>
 
       <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
-          <li v-for="link in links" :key="link.hash">
-            <RouterLink :to="{ name: 'home', hash: link.hash }" class="nav__link">{{ link.label }}</RouterLink>
+          <li v-for="link in links" :key="link.label">
+            <!-- Vue Router's own active classes ignore the #hash, so they are disabled
+                 and the active state comes from the scroll spy instead. -->
+            <RouterLink
+              :to="link.to"
+              class="nav__link"
+              active-class=""
+              exact-active-class=""
+              :class="{ 'is-active': isActive(link) }"
+              :aria-current="isActive(link) ? 'location' : undefined"
+              @click="onLinkClick(link)"
+            >
+              {{ link.label }}
+            </RouterLink>
           </li>
         </ul>
         <RouterLink :to="{ name: 'home', hash: '#contact' }" class="btn nav__cta">
@@ -63,8 +91,17 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
     <Transition name="menu">
       <nav v-if="open" id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
         <ul>
-          <li v-for="(link, i) in [...links, { hash: '#contact', label: 'Contact' }]" :key="link.hash" :style="{ '--i': i }">
-            <RouterLink :to="{ name: 'home', hash: link.hash }">{{ link.label }}</RouterLink>
+          <li v-for="(link, i) in mobileLinks" :key="link.label" :style="{ '--i': i }">
+            <RouterLink
+              :to="link.to"
+              active-class=""
+              exact-active-class=""
+              :class="{ 'is-active': isActive(link) }"
+              :aria-current="isActive(link) ? 'location' : undefined"
+              @click="onLinkClick(link)"
+            >
+              {{ link.label }}
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -112,14 +149,33 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: var(--gradient);
+  /* the site gradient, stretched so it can slowly flow back and forth */
+  background: linear-gradient(120deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent-2), var(--accent));
+  background-size: 300% 300%;
+  animation: logo-flow 6s ease-in-out infinite;
   color: #fff;
   font-size: 0.95rem;
   letter-spacing: -0.04em;
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s;
 }
 
-.logo__name {
-  font-size: 1.02rem;
+/* On hover / keyboard focus: a slight tilt and a violet glow */
+.logo:hover .logo__mark,
+.logo:focus-visible .logo__mark {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 8px 28px -6px rgb(139 92 255 / 0.7);
+}
+
+@keyframes logo-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .nav {
@@ -153,11 +209,13 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   transition: transform 0.35s var(--ease-out);
 }
 
-.nav__link:hover {
+.nav__link:hover,
+.nav__link.is-active {
   color: var(--text);
 }
 
-.nav__link:hover::after {
+.nav__link:hover::after,
+.nav__link.is-active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -209,6 +267,10 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   border-bottom: 1px solid var(--border);
 }
 
+.mobile-menu a.is-active {
+  color: color-mix(in srgb, var(--accent), var(--text) var(--accent-ink));
+}
+
 @keyframes menu-item {
   from {
     opacity: 0;
@@ -226,13 +288,8 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   opacity: 0;
 }
 
-@media (max-width: 420px) {
-  .logo__name {
-    display: none;
-  }
-}
-
-@media (min-width: 900px) {
+/* 5 links + CTA + theme toggle need ~1000px; below that the burger menu is used */
+@media (min-width: 1024px) {
   .nav {
     display: flex;
     margin-left: auto; /* nav + theme toggle grouped on the right */
