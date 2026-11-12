@@ -3,7 +3,7 @@
   "role": "Développeur web passionné",
   "location": "Normandie, France",
   "email": "a.ouzhene@gmail.com",
-  "availability": "Ouvert aux opportunités",
+  "availability": "Disponible pour échanger",
   "rotatingWords": [
     { "text": "modernes", "emoji": "✨" },
     { "text": "responsives", "emoji": "📱" },
@@ -13,11 +13,9 @@
     { "text": "SEO friendly", "emoji": "🔎" },
     { "text": "GEO ready", "emoji": "🤖" }
   ],
-  "intro": "Je conçois des applications web soignées, du back-end à l'interface, avec un faible pour les API bien pensées et le code qui dure.",
   "about": [
-    "Développeur web full-stack avec un penchant affirmé pour le back-end, j'aime autant concevoir une API propre que peaufiner une interface pensée mobile first.",
-    "Avant le code, mon parcours m'a fait traverser la logistique, l'industrie et la rédaction web SEO. J'en garde le sens de l'organisation, la rigueur et l'envie d'écrire pour de vrais utilisateurs.",
-    "Ici, vous trouverez une sélection de projets, mes compétences et quelques contenus rédigés pour le référencement naturel."
+    "Je crée des sites web modernes, élégants et faciles à utiliser, sur ordinateur comme sur mobile. Vitrine pour une activité, boutique en ligne ou outil sur mesure : je soigne autant ce qui se voit que ce qui se passe en coulisses, comme la rapidité, la sécurité et la visibilité sur Google.",
+    "Au quotidien, je travaille avec Drupal, WordPress, Symfony et Vue.js. Avant le code, j'ai été agent de transit, mécanicien industriel puis rédacteur web : un parcours qui m'a appris la rigueur et l'importance de penser à ceux qui utiliseront le site."
   ],
   "marquee": [
     "Code propre",

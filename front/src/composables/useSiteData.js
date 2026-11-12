@@ -1,31 +1,16 @@
-import { shallowRef } from 'vue';
-import { api } from '../api.js';
+import { computed } from 'vue';
+import { loadHome, useStore } from '../store.js';
 
-// Site content (profile, skills, projects, writing) is fetched once and shared
-// between the header, the home sections and the footer.
-const data = shallowRef(null);
-const error = shallowRef(null);
-let pending = null;
-
-function load() {
-  pending ??= api
-    .home()
-    .then((result) => (data.value = result))
-    .catch((e) => {
-      error.value = e;
-      pending = null; // allow a retry
-    });
-  return pending;
-}
-
+// Site content (profile, skills, projects, writing), shared between the header,
+// the home sections and the footer. Already present on pre-rendered pages,
+// fetched once from the API otherwise.
 export function useSiteData() {
-  if (!data.value) load();
+  const store = useStore();
+  if (!store.home) loadHome(store);
+
   return {
-    data,
-    error,
-    retry: () => {
-      error.value = null;
-      return load();
-    },
+    data: computed(() => store.home),
+    error: computed(() => store.errors.home ?? null),
+    retry: () => loadHome(store),
   };
 }

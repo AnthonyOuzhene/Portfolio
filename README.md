@@ -30,7 +30,7 @@ npm run dev      # API sur :3000 + front sur http://localhost:5173 (proxy /api)
 | --------------- | ---------------------------------------------------------------------------- |
 | `npm run dev`   | front + API en mode développement                                            |
 | `npm test`      | tests de l'API                                                               |
-| `npm run build` | build du front dans `front/dist`                                             |
+| `npm run build` | build du front + pré-rendu des pages dans `front/dist` (voir ci-dessous)     |
 | `npm start`     | serveur de production : l'API sert aussi `front/dist` (un seul process Node) |
 
 ## Modifier le contenu
@@ -41,8 +41,25 @@ Tout le contenu se trouve dans `back/src/data/` :
 - `skills.json` : groupes de compétences
 - `projects.json` : projets (un `slug` par projet, qui donne l'URL `/projets/<slug>`)
 - `writing.json` : références en rédaction web
+- `journey.json` : page Parcours (expériences, formations, langues)
 
 Les images vont dans `front/public/images/…` et se référencent en `/images/…`.
+
+> En production, **relancer `npm run build` après chaque modification du contenu** : les pages sont générées à partir de ces fichiers au moment du build.
+
+## Référencement (SEO / GEO)
+
+`npm run build` génère chaque page en HTML complet (`front/scripts/prerender.js`), pour que Google
+et les robots des IA lisent le contenu sans exécuter de JavaScript :
+
+- une page par URL : `/`, `/parcours`, `/projets/<slug>`, plus `404.html` (servie avec un vrai code 404) ;
+- pour chaque page : titre, description, URL canonique, aperçu de partage (Open Graph / Twitter) et données structurées JSON-LD ;
+- `sitemap.xml` et `robots.txt`.
+
+L'adresse du site vaut `https://www.anthonyouzhene.com` par défaut ; pour une autre adresse :
+`SITE_URL=https://exemple.fr npm run build`.
+
+En développement (`npm run dev`), rien ne change : les pages sont rendues dans le navigateur.
 
 ## Formulaire de contact
 

@@ -23,13 +23,19 @@ defineProps({
         <header class="section-head">
           <span v-reveal class="eyebrow">À propos</span>
           <h2 v-reveal="80" class="section-title">
-            Du back-end solide, <span class="gradient-text">des interfaces qui respirent.</span>
+            Je conçois votre site,<br />
+            <span class="gradient-text">on avance ensemble.</span>
           </h2>
         </header>
 
         <div class="about__text">
           <p v-for="(paragraph, i) in profile.about" :key="i" v-reveal="i * 80">{{ paragraph }}</p>
         </div>
+
+        <RouterLink v-reveal="160" :to="{ name: 'journey' }" class="about__link">
+          Découvrir mon parcours
+          <AppIcon name="arrow-right" />
+        </RouterLink>
       </div>
     </div>
   </section>
@@ -115,6 +121,28 @@ defineProps({
   max-width: 62ch;
 }
 
+/* Text link to the Parcours page, with the site's gradient underline */
+.about__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: var(--gradient) left bottom / 100% 2px no-repeat;
+  transition: background-size 0.4s var(--ease-out);
+}
+
+.about__link .icon {
+  transition: transform 0.3s var(--ease-out);
+}
+
+.about__link:hover .icon {
+  transform: translateX(4px);
+}
+
 @media (min-width: 960px) {
   .about {
     grid-template-columns: 380px 1fr;
@@ -124,6 +152,12 @@ defineProps({
   .about__portrait {
     position: sticky;
     top: 120px;
+  }
+
+  /* Title on exactly 2 lines next to the avatar: smaller size, no wrapping inside a line */
+  .section-title {
+    font-size: clamp(2.2rem, 3.6vw, 3.25rem);
+    white-space: nowrap;
   }
 }
 </style>

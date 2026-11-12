@@ -1,6 +1,7 @@
 <script setup>
 import { onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
+import { useScrollSpy } from '../composables/useScrollSpy.js';
 import AppIcon from './AppIcon.vue';
 import ThemeToggle from './ThemeToggle.vue';
 
@@ -18,6 +19,19 @@ const scrolled = ref(false);
 const open = ref(false);
 const route = useRoute();
 
+// Active link: on the home page, the section currently on screen (scroll spy);
+// on other pages, the link to that page.
+const { activeId, setActive } = useScrollSpy(['a-propos', 'competences', 'projets', 'redaction', 'contact']);
+
+function isActive(link) {
+  if (link.to.hash) return route.name === 'home' && activeId.value === link.to.hash.slice(1);
+  return route.name === link.to.name;
+}
+
+function onLinkClick(link) {
+  if (link.to.hash) setActive(link.to.hash.slice(1));
+}
+
 const onScroll = () => (scrolled.value = window.scrollY > 24);
 
 onMounted(() => {
@@ -33,15 +47,26 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
 <template>
   <header class="header" :class="{ 'is-scrolled': scrolled || open, 'is-open': open }">
     <div class="container header__inner">
-      <RouterLink :to="{ name: 'home' }" class="logo" aria-label="Accueil">
-        <span class="logo__mark">AO</span>
-        <span class="logo__name">Anthony Ouzhene</span>
+      <RouterLink :to="{ name: 'home' }" class="logo" aria-label="Anthony Ouzhene, accueil">
+        <span class="logo__mark" aria-hidden="true">AO</span>
       </RouterLink>
 
       <nav class="nav" aria-label="Navigation principale">
         <ul class="nav__list">
           <li v-for="link in links" :key="link.label">
-            <RouterLink :to="link.to" class="nav__link">{{ link.label }}</RouterLink>
+            <!-- Vue Router's own active classes ignore the #hash, so they are disabled
+                 and the active state comes from the scroll spy instead. -->
+            <RouterLink
+              :to="link.to"
+              class="nav__link"
+              active-class=""
+              exact-active-class=""
+              :class="{ 'is-active': isActive(link) }"
+              :aria-current="isActive(link) ? 'location' : undefined"
+              @click="onLinkClick(link)"
+            >
+              {{ link.label }}
+            </RouterLink>
           </li>
         </ul>
         <RouterLink :to="{ name: 'home', hash: '#contact' }" class="btn nav__cta">
@@ -67,7 +92,16 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
       <nav v-if="open" id="mobile-menu" class="mobile-menu" aria-label="Navigation mobile">
         <ul>
           <li v-for="(link, i) in mobileLinks" :key="link.label" :style="{ '--i': i }">
-            <RouterLink :to="link.to">{{ link.label }}</RouterLink>
+            <RouterLink
+              :to="link.to"
+              active-class=""
+              exact-active-class=""
+              :class="{ 'is-active': isActive(link) }"
+              :aria-current="isActive(link) ? 'location' : undefined"
+              @click="onLinkClick(link)"
+            >
+              {{ link.label }}
+            </RouterLink>
           </li>
         </ul>
       </nav>
@@ -121,10 +155,6 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   letter-spacing: -0.04em;
 }
 
-.logo__name {
-  font-size: 1.02rem;
-}
-
 .nav {
   display: none;
   align-items: center;
@@ -157,11 +187,12 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
 }
 
 .nav__link:hover,
-.nav__link.router-link-exact-active {
+.nav__link.is-active {
   color: var(--text);
 }
 
-.nav__link:hover::after {
+.nav__link:hover::after,
+.nav__link.is-active::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -213,6 +244,10 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   border-bottom: 1px solid var(--border);
 }
 
+.mobile-menu a.is-active {
+  color: color-mix(in srgb, var(--accent), var(--text) var(--accent-ink));
+}
+
 @keyframes menu-item {
   from {
     opacity: 0;
@@ -228,12 +263,6 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
 .menu-enter-from,
 .menu-leave-to {
   opacity: 0;
-}
-
-@media (max-width: 420px) {
-  .logo__name {
-    display: none;
-  }
 }
 
 /* 5 links + CTA + theme toggle need ~1000px; below that the burger menu is used */

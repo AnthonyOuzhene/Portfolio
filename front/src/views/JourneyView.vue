@@ -1,9 +1,14 @@
 <script setup>
-import { api } from '../api.js';
-import { useAsync } from '../composables/useAsync.js';
+import { computed } from 'vue';
+import { loadJourney, useStore } from '../store.js';
 import AppIcon from '../components/AppIcon.vue';
 
-const { data: journey, error } = useAsync(() => api.journey());
+// Already in the store on the pre-rendered page, fetched from the API otherwise.
+const store = useStore();
+if (!store.journey) loadJourney(store);
+
+const journey = computed(() => store.journey);
+const error = computed(() => store.errors.journey ?? null);
 </script>
 
 <template>

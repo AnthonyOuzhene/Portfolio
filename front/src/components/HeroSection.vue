@@ -36,7 +36,7 @@ onBeforeUnmount(() => clearInterval(timer));
     <div class="container hero__inner">
       <p class="hero__status">
         <span class="dot" />
-        {{ profile.availability }} · {{ profile.location }}
+        {{ profile.availability }}
       </p>
 
       <h1 class="hero__title">
@@ -77,11 +77,12 @@ onBeforeUnmount(() => clearInterval(timer));
 <style scoped>
 .hero {
   position: relative;
-  min-height: 100svh;
+  /* 85% of the screen, content centred: the marquee below peeks in and invites scrolling */
+  min-height: 85svh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   padding-top: 120px;
-  padding-bottom: clamp(48px, 8vw, 96px);
+  padding-bottom: 48px;
   overflow: hidden;
   isolation: isolate;
 }
@@ -94,6 +95,9 @@ onBeforeUnmount(() => clearInterval(timer));
   filter: blur(80px);
   opacity: var(--hero-glow-opacity);
   transition: opacity 0.4s;
+  /* fade out towards the bottom so the glow never ends in a hard line above the marquee */
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
 }
 
 .blob {
@@ -195,17 +199,18 @@ onBeforeUnmount(() => clearInterval(timer));
   }
 }
 
+/* The name is a small signature line; the role below is the headline. */
 .hero__title {
-  font-size: clamp(3.6rem, 15vw, 13rem);
-  font-weight: 700;
-  line-height: 0.88;
-  letter-spacing: -0.055em;
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 
 .line {
-  display: block;
+  display: inline-block;
   overflow: hidden;
-  padding-bottom: 0.06em;
+  margin-right: 0.3em;
 }
 
 .line > span {
@@ -240,18 +245,23 @@ onBeforeUnmount(() => clearInterval(timer));
 
 .hero__copy {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .hero__role {
   font-family: var(--font-display);
-  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-  font-weight: 500;
+  font-size: clamp(2.6rem, 7vw, 6.2rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
 }
 
 .hero__tagline {
+  margin-top: 12px;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: clamp(1.5rem, 3.4vw, 2.8rem);
+  line-height: 1.2;
 }
 
 .word-rotator {
@@ -259,6 +269,14 @@ onBeforeUnmount(() => clearInterval(timer));
   vertical-align: bottom;
   white-space: nowrap;
   font-weight: 600;
+}
+
+/* On phones the longest words would wrap and make the buttons jump at every
+   change: the word always goes on its own line instead (constant height). */
+@media (max-width: 480px) {
+  .word-rotator {
+    display: block;
+  }
 }
 
 .word {
@@ -297,7 +315,8 @@ onBeforeUnmount(() => clearInterval(timer));
   gap: 12px;
 }
 
-@media (min-width: 900px) {
+/* Text and buttons side by side only when the large tagline has room for its longest word. */
+@media (min-width: 1024px) {
   .hero__bottom {
     grid-template-columns: minmax(0, 1fr) auto;
   }
