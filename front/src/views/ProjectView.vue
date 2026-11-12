@@ -120,8 +120,10 @@ onBeforeUnmount(() => {
             class="btn"
             :class="{ 'btn--ghost': i > 0 }"
           >
+            <!-- GitHub links get the GitHub logo; other links an external-link arrow -->
+            <AppIcon v-if="link.url.includes('github.com')" name="github" />
             {{ link.label }}
-            <AppIcon name="arrow-up-right" />
+            <AppIcon v-if="!link.url.includes('github.com')" name="arrow-up-right" />
           </a>
         </div>
       </div>
@@ -312,6 +314,11 @@ onBeforeUnmount(() => {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 12px;
+}
+
+/* Same coral glow on hover for every project link (outline buttons have none by default) */
+.hero__links .btn--ghost:hover {
+  box-shadow: 0 12px 40px -12px rgb(255 77 90 / 0.6);
 }
 
 @media (min-width: 760px) {

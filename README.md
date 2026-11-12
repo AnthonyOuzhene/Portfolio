@@ -33,6 +33,8 @@ npm run dev      # API sur :3000 + front sur http://localhost:5173 (proxy /api)
 | `npm run build` | build du front + pré-rendu des pages dans `front/dist` (voir ci-dessous)     |
 | `npm start`     | serveur de production : l'API sert aussi `front/dist` (un seul process Node) |
 
+Mise en ligne sur o2switch : voir le guide pas à pas [DEPLOIEMENT.md](DEPLOIEMENT.md).
+
 ## Modifier le contenu
 
 Tout le contenu se trouve dans `back/src/data/` :
