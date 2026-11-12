@@ -14,7 +14,8 @@ defineProps({
         <h2 v-reveal="80" class="section-title">Des mots qui <span class="gradient-text">se référencent</span></h2>
         <p v-reveal="160" class="section-lead">
           Avant le code, j'ai écrit pour le web : articles de blog et fiches produits optimisés pour le référencement
-          naturel. Une corde en plus pour des projets qui doivent se faire trouver.
+          naturel. Aujourd'hui, j'applique ce savoir-faire au SEO et au GEO des sites que je développe, pour qu'ils
+          soient trouvés sur Google comme dans les réponses des IA.
         </p>
       </header>
 

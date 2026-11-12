@@ -1,10 +1,8 @@
 <script setup>
-import { computed } from 'vue';
-import { useSiteData } from '../composables/useSiteData.js';
+import { profile } from '../content.js';
 import AppIcon from './AppIcon.vue';
 
-const { data } = useSiteData();
-const socials = computed(() => data.value?.profile.socials ?? []);
+const socials = profile.socials;
 
 function backToTop() {
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

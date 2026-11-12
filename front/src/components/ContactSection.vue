@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref } from 'vue';
-import { api } from '../api.js';
+import { sendContact } from '../api.js';
 import AppIcon from './AppIcon.vue';
 
 const form = reactive({ name: '', email: '', message: '', website: '' });
@@ -22,7 +22,7 @@ async function submit() {
   status.value = 'sending';
   serverError.value = '';
   try {
-    await api.contact({ ...form });
+    await sendContact({ ...form });
     status.value = 'sent';
     Object.assign(form, { name: '', email: '', message: '', website: '' });
   } catch (error) {

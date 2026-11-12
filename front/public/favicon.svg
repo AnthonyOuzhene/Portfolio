@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Same mark as the header logo: rounded square, site gradient, white "AO" -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0.15" x2="1" y2="0.85">
+      <stop offset="0" stop-color="#ff4d5a" />
+      <stop offset="0.55" stop-color="#8b5cff" />
+      <stop offset="1" stop-color="#3dd6c6" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="19" fill="url(#g)" />
+  <text x="32" y="42" text-anchor="middle" fill="#fff"
+        font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+        font-size="28" font-weight="700" letter-spacing="-1">AO</text>
+</svg>

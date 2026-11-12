@@ -1,0 +1,84 @@
+{
+  "intro": "Développeur back-end de formation, j'ai commencé sur Symfony avant de me spécialiser sur les CMS, notamment Drupal. Un parcours varié, de l'atelier industriel au code, qui m'a donné une vision globale des projets digitaux : de la technique à la gestion de projet. Toujours en quête de nouveaux défis, je suis prêt à sortir de ma back cave (oui, je suis sociable !) pour rejoindre une équipe dynamique.",
+  "experiences": [
+    {
+      "id": "neoma",
+      "role": "Développeur web back-end",
+      "company": "Neoma Business School",
+      "period": "Avril 2023 — aujourd'hui",
+      "current": true,
+      "highlights": [
+        "Refonte de site sous Drupal 10 : migration de contenus, modules custom, configuration YAML, preprocess et templates Twig, amélioration du back-office.",
+        "Optimisations SEO et GEO pour une meilleure visibilité auprès des moteurs de recherche et des IA.",
+        "Développement et maintenance de sites sur mesure sous WordPress : CPT, taxonomies, ACF, API, Twig.",
+        "Gestion de projet web : coordination des équipes métiers et des prestataires, suivi du planning, revue de code, méthodologie Agile.",
+        "Gestion des serveurs mutualisés : performance, sécurité, accès SSH."
+      ],
+      "stack": ["Drupal 10", "WordPress", "PHP", "Twig", "ACF", "SEO / GEO", "SSH", "Agile"]
+    },
+    {
+      "id": "freelance-seo",
+      "role": "Rédacteur web SEO",
+      "company": "Freelance",
+      "period": "Décembre 2019 — janvier 2023",
+      "highlights": [
+        "Rédaction et intégration d'articles de blog optimisés pour le référencement naturel.",
+        "Relecture et optimisation de textes existants pour améliorer leur positionnement."
+      ],
+      "stack": ["SEO", "Rédaction web", "WordPress"]
+    },
+    {
+      "id": "siemens",
+      "role": "Technicien garantie / Mécanicien machines tournantes sous pression",
+      "company": "Dresser-Rand — Siemens Energy",
+      "period": "Septembre 2012 — juillet 2021",
+      "highlights": [
+        "Gestion de projets garantie : coordination entre l'atelier de fabrication, le bureau d'études et le client final.",
+        "Montage et essais des produits Siemens Energy."
+      ],
+      "stack": ["Gestion de projet", "Coordination", "Industrie"]
+    },
+    {
+      "id": "transit",
+      "role": "Agent de transit",
+      "period": "Septembre 2003 — août 2012",
+      "highlights": [
+        "Suivi des dossiers d'import et d'export.",
+        "Relation avec les clients, fournisseurs et agents."
+      ],
+      "stack": ["Logistique", "Relation client"]
+    }
+  ],
+  "education": [
+    {
+      "title": "Titre professionnel Développeur web & web mobile",
+      "school": "O'Clock",
+      "period": "Décembre 2022"
+    },
+    {
+      "title": "Formation développement web PHP — Symfony & WordPress",
+      "school": "École O'Clock",
+      "period": "Novembre 2021 — juillet 2022"
+    },
+    {
+      "title": "Formation rédaction web SEO",
+      "school": "FRW Lucie Rondelet",
+      "period": "Mars — juillet 2019"
+    },
+    {
+      "title": "CQPM Mécanicien machines tournantes",
+      "school": "Pôle Formation Le Havre",
+      "period": "Septembre 2012 — juin 2013"
+    },
+    {
+      "title": "TOEIC — 850 / 990",
+      "school": "ISCT Le Havre",
+      "period": "Mai 2005"
+    }
+  ],
+  "languages": [
+    { "name": "Anglais", "level": "Courant" },
+    { "name": "Espagnol", "level": "Notions" }
+  ],
+  "interests": ["Mangas", "Gaming", "Guitare", "Sport US"]
+}
