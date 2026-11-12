@@ -1,18 +1,10 @@
 <script setup>
-import { computed } from 'vue';
-import { loadJourney, useStore } from '../store.js';
+import { journey } from '../content.js';
 import AppIcon from '../components/AppIcon.vue';
-
-// Already in the store on the pre-rendered page, fetched from the API otherwise.
-const store = useStore();
-if (!store.journey) loadJourney(store);
-
-const journey = computed(() => store.journey);
-const error = computed(() => store.errors.journey ?? null);
 </script>
 
 <template>
-  <article v-if="journey" class="journey">
+  <article class="journey">
     <!-- ---------- Intro ---------- -->
     <header class="hero">
       <div class="hero__glow" aria-hidden="true" />
@@ -102,15 +94,6 @@ const error = computed(() => store.errors.journey ?? null);
       </div>
     </section>
   </article>
-
-  <div v-else-if="error" class="state container">
-    <h1>Impossible de charger le parcours.</h1>
-    <p>{{ error.message }}</p>
-  </div>
-
-  <div v-else class="state container" aria-busy="true">
-    <span class="loader" />
-  </div>
 </template>
 
 <style scoped>
@@ -448,34 +431,5 @@ const error = computed(() => store.errors.journey ?? null);
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-}
-
-/* ---------- States ---------- */
-.state {
-  min-height: 100svh;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 16px;
-  text-align: center;
-}
-
-.state p {
-  color: var(--muted);
-}
-
-.loader {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 </style>

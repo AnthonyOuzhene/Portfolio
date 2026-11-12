@@ -1,27 +1,12 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { loadProject, useStore } from '../store.js';
+import { getProject } from '../content.js';
 import AppIcon from '../components/AppIcon.vue';
 import NotFoundView from './NotFoundView.vue';
 
 const route = useRoute();
-const store = useStore();
-const slug = computed(() => route.params.slug);
-
-// Already in the store on the pre-rendered page, fetched from the API otherwise.
-const project = computed(() => store.projects[slug.value] ?? null);
-const error = computed(() => store.errors[`project:${slug.value}`] ?? null);
-const loading = computed(() => !project.value && !error.value);
-const notFound = computed(() => error.value?.status === 404);
-
-watch(
-  slug,
-  (s) => {
-    if (s && !store.projects[s]) loadProject(store, s);
-  },
-  { immediate: true },
-);
+const project = computed(() => getProject(route.params.slug)); // null for an unknown slug
 
 watch(
   project,
@@ -78,9 +63,9 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <NotFoundView v-if="notFound" />
+  <NotFoundView v-if="!project" />
 
-  <article v-else-if="project" class="project-page" :style="{ '--project-accent': project.accent }">
+  <article v-else class="project-page" :style="{ '--project-accent': project.accent }">
     <header class="hero">
       <div class="hero__glow" aria-hidden="true" />
       <div class="container hero__inner">
@@ -204,15 +189,6 @@ onBeforeUnmount(() => {
       </Transition>
     </Teleport>
   </article>
-
-  <div v-else-if="error" class="state container">
-    <h1>Impossible de charger ce projet.</h1>
-    <p>{{ error.message }}</p>
-  </div>
-
-  <div v-else-if="loading" class="state container" aria-busy="true">
-    <span class="loader" />
-  </div>
 </template>
 
 <style scoped>
@@ -481,35 +457,6 @@ onBeforeUnmount(() => {
 
 .pager__link:hover .pager__title {
   color: color-mix(in srgb, var(--project-accent), var(--text) var(--accent-ink));
-}
-
-/* ---------- States ---------- */
-.state {
-  min-height: 100svh;
-  display: grid;
-  place-content: center;
-  justify-items: center;
-  gap: 16px;
-  text-align: center;
-}
-
-.state p {
-  color: var(--muted);
-}
-
-.loader {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--border);
-  border-top-color: var(--accent);
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 </style>
 

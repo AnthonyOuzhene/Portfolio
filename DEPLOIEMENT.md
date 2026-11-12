@@ -8,7 +8,7 @@ Le site est une application Node.js : un seul serveur Express (`back/src/index.j
 
 ```
 www.anthonyouzhene.com ──► o2switch (Apache + Passenger) ──► back/src/index.js (Express)
-                                                              ├── /api/...      contenu + formulaire
+                                                              ├── /api/contact  formulaire de contact
                                                               └── front/dist    pages HTML, images, sitemap
 ```
 
@@ -135,7 +135,7 @@ Puis redémarrer l'application : cPanel → **Setup Node.js App** → **Restart*
 
 ## 9. Mettre à jour le site
 
-Après chaque modification (code **ou** contenu dans `back/src/data/*.json`) :
+Après chaque modification (code **ou** contenu dans `content/*.json`) :
 
 1. Sur ton poste : commit puis `git push` sur `main`.
 2. En SSH sur le serveur :
@@ -147,7 +147,7 @@ Après chaque modification (code **ou** contenu dans `back/src/data/*.json`) :
    npm run build    # régénère les pages avec le nouveau contenu
    ```
 
-3. cPanel → **Setup Node.js App** → **Restart** (l'API relit le contenu au démarrage).
+3. cPanel → **Setup Node.js App** → **Restart** (pour servir les nouvelles pages et le nouveau code).
 
 ## 10. Dépannage
 

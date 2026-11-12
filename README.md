@@ -1,15 +1,16 @@
 # Portfolio — Anthony Ouzhene
 
-Portfolio personnel : un front **Vue 3 + Vite** et une API **Node.js + Express**.
+Portfolio personnel : un site **Vue 3 + Vite** pré-rendu, servi par un petit serveur **Node.js + Express**
+qui gère aussi le formulaire de contact.
 
 ```
 .
-├── front/   Vue 3 (Composition API), Vite, CSS natif
+├── content/   contenu du site (JSON) ← c'est ici qu'on modifie les textes
+├── front/     Vue 3 (Composition API), Vite, CSS natif
 │   ├── public/images   visuels des projets et de la rédaction
+│   ├── scripts/        pré-rendu des pages au build
 │   └── src/            composants, vues, composables
-└── back/    API Express 5
-    ├── src/data/       contenu du site (JSON) ← c'est ici qu'on modifie les textes
-    ├── src/routes/     /api/home, /api/projects/:slug, /api/contact…
+└── back/      serveur Express 5 : pages du site + POST /api/contact
     └── test/           tests Vitest + Supertest
 ```
 
@@ -37,7 +38,7 @@ Mise en ligne sur o2switch : voir le guide pas à pas [DEPLOIEMENT.md](DEPLOIEME
 
 ## Modifier le contenu
 
-Tout le contenu se trouve dans `back/src/data/` :
+Tout le contenu se trouve dans `content/`, à la racine du projet :
 
 - `profile.json` : présentation, liens, réseaux sociaux
 - `skills.json` : groupes de compétences

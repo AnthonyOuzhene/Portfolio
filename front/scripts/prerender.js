@@ -4,27 +4,26 @@
  * For every page it writes a complete HTML file into dist/, so search engines
  * and AI crawlers get the real content without running JavaScript:
  *   - the page rendered by Vue (dist-ssr/entry-server.js),
- *   - its own <title>, description, canonical URL, Open Graph / Twitter tags and JSON-LD,
- *   - the data it needs, embedded as JSON so the browser doesn't refetch it.
+ *   - its own <title>, description, canonical URL, Open Graph / Twitter tags and JSON-LD.
  * It also writes sitemap.xml and robots.txt.
  *
- * Content comes straight from back/src/data/*.json: after editing it, rebuild.
+ * Content comes from the /content JSON files (bundled into the site): edit them, then rebuild.
  * The site URL can be overridden with the SITE_URL environment variable.
  */
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { getHomeData, getProjectDetail, journey, profile, projects, skills } from '../../back/src/data/index.js';
 
 const SITE_URL = (process.env.SITE_URL || 'https://www.anthonyouzhene.com').replace(/\/+$/, '');
-const NAME = profile.name;
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 const frontDir = fileURLToPath(new URL('..', import.meta.url));
 const distDir = join(frontDir, 'dist');
 const ssrDir = join(frontDir, 'dist-ssr');
 
-const { render } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
+const { render, content } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
+const { profile, skills, projects, journey } = content;
+const NAME = profile.name;
 const template = readFileSync(join(distDir, 'index.html'), 'utf8');
 
 // ---------- helpers ----------
@@ -59,13 +58,10 @@ const website = {
 };
 
 // ---------- pages ----------
-const home = getHomeData();
-
 const pages = [
   {
     url: '/',
     file: 'index.html',
-    state: { home },
     title: `${NAME} · Développeur web passionné`,
     description:
       'Anthony Ouzhene, développeur web passionné en Normandie : sites modernes, élégants et faciles à utiliser, sous Drupal, WordPress, Symfony et Vue.js.',
@@ -74,7 +70,6 @@ const pages = [
   {
     url: '/parcours',
     file: 'parcours/index.html',
-    state: { home, journey },
     title: `Parcours · ${NAME}`,
     description:
       "Le parcours d'Anthony Ouzhene, de l'atelier industriel au développement web : expériences, formations, langues et centres d'intérêt.",
@@ -83,7 +78,6 @@ const pages = [
   ...projects.map((p) => ({
     url: `/projets/${p.slug}`,
     file: `projets/${p.slug}/index.html`,
-    state: { home, projects: { [p.slug]: getProjectDetail(p.slug) } },
     title: `${p.title} · ${NAME}`,
     description: `${p.title} — ${p.summary}`,
     jsonLd: [
@@ -102,7 +96,6 @@ const pages = [
   {
     url: '/404',
     file: '404.html',
-    state: { home },
     title: `Page introuvable · ${NAME}`,
     description: "Cette page n'existe pas ou plus.",
     noindex: true,
@@ -149,17 +142,14 @@ function headFor(page) {
 }
 
 const SEO_BLOCK = /<!-- seo:start[\s\S]*?<!-- seo:end -->/;
-if (!SEO_BLOCK.test(template) || !template.includes('<!--app-html-->') || !template.includes('<!--app-state-->')) {
-  throw new Error('dist/index.html is missing the seo / app-html / app-state markers (see front/index.html).');
+if (!SEO_BLOCK.test(template) || !template.includes('<!--app-html-->')) {
+  throw new Error('dist/index.html is missing the seo / app-html markers (see front/index.html).');
 }
 
 for (const page of pages) {
-  const appHtml = await render(page.url, page.state);
+  const appHtml = await render(page.url);
   // Replacer functions so "$" characters in the content are never treated as patterns.
-  const html = template
-    .replace(SEO_BLOCK, () => headFor(page))
-    .replace('<!--app-html-->', () => appHtml)
-    .replace('<!--app-state-->', () => `<script type="application/json" id="__STATE__">${embedJson(page.state)}</script>`);
+  const html = template.replace(SEO_BLOCK, () => headFor(page)).replace('<!--app-html-->', () => appHtml);
 
   const target = join(distDir, page.file);
   mkdirSync(dirname(target), { recursive: true });

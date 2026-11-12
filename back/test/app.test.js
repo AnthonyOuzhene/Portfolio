@@ -61,34 +61,16 @@ describe('front pages (pre-rendered build)', () => {
   });
 });
 
-describe('content API', () => {
-  it('returns everything the home page needs', async () => {
-    const res = await request(makeApp()).get('/api/home').expect(200);
-    expect(res.body.profile.name).toBe('Anthony Ouzhene');
-    expect(res.body.projects.length).toBeGreaterThan(0);
-    expect(res.body.projects[0]).not.toHaveProperty('gallery');
-    expect(res.body.skills.length).toBeGreaterThan(0);
-    expect(res.body.writing.length).toBeGreaterThan(0);
+describe('API', () => {
+  it('answers the health check', async () => {
+    const res = await request(makeApp()).get('/api/health').expect(200);
+    expect(res.body).toEqual({ status: 'ok' });
   });
 
-  it('returns a project with its neighbours', async () => {
-    const res = await request(makeApp()).get('/api/projects/oflix').expect(200);
-    expect(res.body.title).toBe("O'flix");
-    expect(res.body.gallery.length).toBeGreaterThan(0);
-    expect(res.body.prev.slug).toBeTruthy();
-    expect(res.body.next.slug).toBeTruthy();
-  });
-
-  it('returns the career journey', async () => {
-    const res = await request(makeApp()).get('/api/journey').expect(200);
-    expect(res.body.experiences.length).toBeGreaterThan(0);
-    expect(res.body.experiences[0]).toHaveProperty('role');
-    expect(res.body.education.length).toBeGreaterThan(0);
-  });
-
-  it('404s on unknown project and unknown API route', async () => {
+  it('404s on any other API route (site content is bundled in the front, not served by the API)', async () => {
     const app = makeApp();
-    await request(app).get('/api/projects/nope').expect(404);
+    await request(app).get('/api/home').expect(404);
+    await request(app).get('/api/projects/oflix').expect(404);
     await request(app).get('/api/nope').expect(404);
   });
 });

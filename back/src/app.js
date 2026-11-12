@@ -3,7 +3,6 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import helmet from 'helmet';
-import { contentRouter } from './routes/content.js';
 import { createContactRouter } from './routes/contact.js';
 import { createMailer } from './services/mailer.js';
 import { resolvePage } from './services/pages.js';
@@ -23,8 +22,8 @@ export function createApp({
   app.use(helmet());
   app.use(express.json({ limit: '20kb' }));
 
+  // The API is only the contact form (site content is bundled into the front at build time).
   app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
-  app.use('/api', contentRouter);
   app.use('/api/contact', createContactRouter({ sendMail, limit: contactLimit }));
   app.use('/api', (_req, res) => res.status(404).json({ error: 'Route API inconnue' }));
 
