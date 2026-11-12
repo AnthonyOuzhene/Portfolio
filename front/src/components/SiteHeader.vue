@@ -149,10 +149,33 @@ watch(open, (isOpen) => document.body.style.setProperty('overflow', isOpen ? 'hi
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: var(--gradient);
+  /* the site gradient, stretched so it can slowly flow back and forth */
+  background: linear-gradient(120deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent-2), var(--accent));
+  background-size: 300% 300%;
+  animation: logo-flow 6s ease-in-out infinite;
   color: #fff;
   font-size: 0.95rem;
   letter-spacing: -0.04em;
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s;
+}
+
+/* On hover / keyboard focus: a slight tilt and a violet glow */
+.logo:hover .logo__mark,
+.logo:focus-visible .logo__mark {
+  transform: rotate(-8deg) scale(1.08);
+  box-shadow: 0 8px 28px -6px rgb(139 92 255 / 0.7);
+}
+
+@keyframes logo-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .nav {
