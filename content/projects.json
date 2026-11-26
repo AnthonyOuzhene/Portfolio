@@ -84,16 +84,53 @@
   {
     "slug": "boogiink",
     "title": "Boogi'Ink",
-    "tagline": "Salon de tatouage & piercing",
-    "summary": "Site vitrine moderne pour un salon de tatouage et de piercing.",
+    "tagline": "Salon de tatouage",
+    "summary": "Site vitrine d'un salon de tatouage : galerie de réalisations, flashs, livre d'or modéré et backoffice sur mesure pour le salon.",
     "context": "Projet client.",
-    "stack": ["Symfony", "React"],
+    "stack": ["Symfony", "API Platform", "EasyAdmin", "React"],
     "accent": "#b388ff",
     "status": "En cours",
-    "cover": "/images/projects/boogink-cover.webp",
-    "features": [],
+    "cover": "/images/projects/boogiink-logo.webp",
+    "coverMaxSize": 160,
+    "features": [
+      "Front React + Vite consommant une API publique en lecture seule (API Platform)",
+      "Galerie de réalisations filtrable par style, avec visionneuse, dessin préparatoire et timelapse vidéo",
+      "Catalogue de flashs, FAQ, page atelier avec frises chronologiques",
+      "Livre d'or : avis déposés sans compte, modérés avant publication, protégés par validation",
+      "Backoffice EasyAdmin avec deux rôles (salon / développeur), voter et accès au backoffice sécurisé",
+      "Conversion automatique des photos en WebP à l'envoi",
+      "Flux Instagram synchronisé côté serveur par tâche planifiée"
+    ],
     "links": [
-      { "label": "Visiter le site", "url": "http://www.boogiink-tattoo-lady-piercing.com/" }
+      { "label": "Visiter le site", "url": "#" },
+      { "label": "Voir le code sur GitHub", "url": "https://github.com/AnthonyOuzhene/boogi-ink" }
+    ],
+    "gallery": []
+  },
+  {
+    "slug": "bloom-and-sun",
+    "title": "Bloom & Sun",
+    "tagline": "Concept store",
+    "summary": "Boutique en ligne d'un concept store (mode, accessoires et déco) sur WordPress et WooCommerce, avec un thème sur mesure administrable par la cliente.",
+    "context": "Projet client.",
+    "stack": ["WordPress", "WooCommerce", "PHP"],
+    "accent": "#e4a593",
+    "status": "En cours",
+    "cover": "/images/projects/bloomsun-cover.webp",
+    "features": [
+      "Thème WordPress « bloc » sur mesure, CSS chargé seulement pour les sections affichées",
+      "Contenus administrables injectés dans les gabarits : infos du magasin, accueil, événements",
+      "Pages de réglages sur mesure pour la cliente : infos du magasin, idées cadeaux, collections mises en avant",
+      "Événements au magasin (CPT dédié) affichés automatiquement selon leurs dates : bandeau, pastille et détails",
+      "Liste d'envies sans compte client, enregistrée dans un cookie",
+      "Boutique WooCommerce personnalisée : filtres par taille et couleur, fiche produit, panier et commande",
+      "Rôles et droits sur mesure",
+      "Images converties automatiquement en WebP à l'envoi",
+      "Connection par Token au flux Instagram du magasin sur l'accueil"
+    ],
+    "links": [
+      { "label": "Visiter le site", "url": "#" },
+      { "label": "Voir le code sur GitHub", "url": "https://github.com/AnthonyOuzhene/Bloom-Sun/tree/develop" }
     ],
     "gallery": []
   }

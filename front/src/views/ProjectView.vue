@@ -116,7 +116,12 @@ onBeforeUnmount(() => {
 
     <div class="container">
       <figure class="cover">
-        <img :src="project.cover" :alt="`Visuel du projet ${project.title}`" />
+        <!-- coverMaxSize (content/projects.json): never enlarge a small logo beyond its real size -->
+        <img
+          :src="project.cover"
+          :alt="`Visuel du projet ${project.title}`"
+          :style="project.coverMaxSize ? { maxWidth: `${project.coverMaxSize}px`, maxHeight: `${project.coverMaxSize}px` } : null"
+        />
       </figure>
 
       <section v-if="project.features.length" class="block">
@@ -305,8 +310,11 @@ onBeforeUnmount(() => {
 
 /* ---------- Cover ---------- */
 .cover {
-  display: grid;
-  place-items: center;
+  /* flex (not grid): the image's height: 78% must resolve against this fixed height,
+     otherwise a large square visual overflows the frame instead of being centred */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: clamp(260px, 42vw, 520px);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
