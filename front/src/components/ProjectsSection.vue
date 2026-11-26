@@ -1,5 +1,5 @@
 <script setup>
-import { computed, reactive, ref, watch } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import AppIcon from './AppIcon.vue';
 
@@ -26,7 +26,7 @@ const top = computed(() => props.projects[order.value[0]]);
 const position = computed(() => order.value[0] + 1);
 
 // ---------- Drag state of the top card ----------
-const drag = reactive({ active: false, x: 0, y: 0, startX: 0, startY: 0, flying: false, moved: false });
+const drag = reactive({ active: false, x: 0, y: 0, startX: 0, startY: 0, flying: false, moved: false, auto: false });
 
 const topStyle = computed(() => ({
   transform: `translate(${drag.x}px, ${drag.y * 0.3}px) rotate(${drag.x * 0.06}deg)`,
@@ -106,6 +106,64 @@ function onKey(event) {
     like();
   }
 }
+
+// ---------- Autoplay ----------
+// A new card every AUTOPLAY_SECONDS, driven by the progress bar's CSS animation
+// (its "animationend" passes to the next card). It only runs while the deck is on
+// screen, and pauses while the mouse is over the cards or the deck has keyboard focus.
+const AUTOPLAY_SECONDS = 6;
+
+const deckWrap = ref(null);
+const autoplayEnabled = ref(false); // false on the server and for "reduce motion" visitors
+const paused = ref(false); // pause / play button
+const hovered = ref(false); // mouse over the cards (not the buttons)
+const focused = ref(false);
+const inView = ref(false);
+const cycle = ref(0); // changing it restarts the progress bar
+
+const autoplaying = computed(
+  () => autoplayEnabled.value && !paused.value && !hovered.value && !focused.value && inView.value && !drag.active,
+);
+
+let observer;
+
+// Every manual action (drag, click, keyboard, buttons) restarts the countdown from zero right away.
+function noteInteraction() {
+  cycle.value++;
+}
+
+async function autoPass() {
+  if (drag.flying || drag.active) return;
+  drag.auto = true; // no "SUIVANT" stamp for automatic moves
+  await pass();
+  drag.auto = false;
+}
+
+watch(order, () => cycle.value++); // each new card starts a fresh countdown
+
+function onPointerEnter(event) {
+  if (event.pointerType === 'mouse') hovered.value = true;
+}
+
+// Only keyboard focus pauses autoplay: a mouse click leaves the clicked button focused,
+// which would otherwise stop autoplay for good.
+function onFocusIn(event) {
+  focused.value = event.target.matches(':focus-visible');
+}
+
+function onFocusOut(event) {
+  if (!deckWrap.value?.contains(event.relatedTarget)) focused.value = false;
+}
+
+onMounted(() => {
+  autoplayEnabled.value = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  observer = new IntersectionObserver(([entry]) => (inView.value = entry.isIntersecting), { threshold: 0.5 });
+  observer.observe(deckWrap.value);
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
+});
 </script>
 
 <template>
@@ -125,10 +183,20 @@ function onKey(event) {
         </ul>
       </header>
 
-      <div v-reveal="120" class="deck-wrap">
+      <div
+        ref="deckWrap"
+        v-reveal="120"
+        class="deck-wrap"
+        @focusin="onFocusIn"
+        @focusout="onFocusOut"
+        @pointerdown="noteInteraction"
+        @keydown="noteInteraction"
+      >
         <div
           class="deck"
           tabindex="0"
+          @pointerenter="onPointerEnter"
+          @pointerleave="hovered = false"
           role="group"
           aria-roledescription="pile de cartes"
           :aria-label="`Projet ${position} sur ${projects.length} : ${top.title}. Flèche gauche pour passer, flèche droite pour ouvrir.`"
@@ -151,7 +219,13 @@ function onKey(event) {
             @click="card.depth === 0 && onClick()"
           >
             <div class="swipe-card__media">
-              <img :src="card.project.cover" :alt="`Visuel du projet ${card.project.title}`" draggable="false" />
+              <!-- coverMaxSize (content/projects.json): never enlarge a small logo beyond its real size -->
+              <img
+                :src="card.project.cover"
+                :alt="`Visuel du projet ${card.project.title}`"
+                :style="card.project.coverMaxSize ? { maxWidth: `${card.project.coverMaxSize}px`, maxHeight: `${card.project.coverMaxSize}px` } : null"
+                draggable="false"
+              />
               <span v-if="card.project.status !== 'Terminé'" class="swipe-card__status">{{ card.project.status }}</span>
             </div>
 
@@ -166,9 +240,30 @@ function onKey(event) {
 
             <template v-if="card.depth === 0">
               <span class="stamp stamp--like" :style="{ opacity: Math.max(0, progress) }" aria-hidden="true">Match !</span>
-              <span class="stamp stamp--pass" :style="{ opacity: Math.max(0, -progress) }" aria-hidden="true">Suivant</span>
+              <span class="stamp stamp--pass" :style="{ opacity: drag.auto ? 0 : Math.max(0, -progress) }" aria-hidden="true">Suivant</span>
             </template>
           </article>
+        </div>
+
+        <!-- Autoplay: progress until the next card + pause / play (rendered in the browser only) -->
+        <div v-if="autoplayEnabled" class="autoplay" :class="{ 'is-paused': !autoplaying }">
+          <span class="autoplay__track" aria-hidden="true">
+            <span
+              :key="cycle"
+              class="autoplay__bar"
+              :style="{ animationDuration: `${AUTOPLAY_SECONDS}s` }"
+              @animationend="autoPass"
+            />
+          </span>
+          <button
+            type="button"
+            class="autoplay__toggle"
+            :aria-pressed="paused"
+            :aria-label="paused ? 'Reprendre le défilement automatique' : 'Mettre en pause le défilement automatique'"
+            @click="paused = !paused"
+          >
+            <AppIcon :name="paused ? 'play' : 'pause'" />
+          </button>
         </div>
 
         <div class="controls">
@@ -377,6 +472,66 @@ function onKey(event) {
   right: 22px;
   color: var(--danger);
   transform: rotate(14deg);
+}
+
+/* ---------- Autoplay ---------- */
+.autoplay {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 400px);
+  margin-top: -12px; /* closer to the deck than the other controls */
+}
+
+.autoplay__track {
+  flex: 1;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+/* Fills from left to right; when it ends, the next card comes (see autoPass). */
+.autoplay__bar {
+  display: block;
+  height: 100%;
+  background: var(--gradient);
+  transform-origin: left;
+  animation: autoplay-progress linear forwards;
+}
+
+.autoplay.is-paused .autoplay__bar {
+  animation-play-state: paused;
+  opacity: 0.45;
+}
+
+@keyframes autoplay-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.autoplay__toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+  font-size: 0.8rem;
+  transition:
+    color 0.2s,
+    background 0.2s;
+}
+
+.autoplay__toggle:hover {
+  color: var(--text);
+  background: var(--surface-hover);
 }
 
 /* ---------- Controls ---------- */
